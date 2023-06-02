@@ -19,7 +19,7 @@ public class RecipesController {
     // CREATE
     @PostMapping("/recipe")
     public Recipes createRecipes(@RequestBody Recipes recipes) {
-//        recipesService.addRecipe(recipes);
+        recipesService.addRecipe(recipes);
         return recipes;
     }
 
