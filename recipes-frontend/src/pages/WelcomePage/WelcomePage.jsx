@@ -1,23 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./WelcomePage.scss";
 import Heading from "../../components/Heading/Heading";
 import RoundButton from "../../components/Buttons/RoundButton/RoundButton";
 
 const WelcomePage = () => {
   return (
-    <div>
-      <div>
+    <div className="welcome-container">
+      <div className="welcome-container__heading">
         <Heading />
       </div>
-      <div>
+      <div className="welcome">
         <h1>Welcome To My </h1>
         <h1>Favourite Recipes</h1>
-        <p>I gathered all of the recipes I love here</p>
-        <p>...They can be your favourite too!</p>
+        <p className="welcome__text">
+          I gathered all of the recipes I love here
+        </p>
+        <p className="welcome__text">...They can be your favourite too!</p>
+        <Link to="/recipes">
+          <RoundButton />
+        </Link>
       </div>
-      <div>
-        <RoundButton />
-      </div>
+      <div></div>
     </div>
   );
 };
