@@ -1,1 +1,41 @@
 @use "../../styles/main" as *;
+@use "../../styles/variables" as *;
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__heading {
+    width: 100%;
+  }
+
+  .welcome {
+    padding: 30px;
+
+    &__text {
+      padding-left: 15px;
+      padding-top: 15px;
+      color: $text-gray;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  .welcome {
+    padding-left: 100px;
+
+    &__text {
+      padding-left: 30px;
+      padding-top: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
