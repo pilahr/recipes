@@ -13,6 +13,8 @@
     height: 150px;
     padding: 3px;
     &--blink {
+        padding-top: 5px;
+        color: $color-bright-orange;
       animation: animate 1.5s linear infinite;
     }
     @keyframes animate {
