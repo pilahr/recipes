@@ -19,7 +19,7 @@ public class RecipesController {
     // CREATE
     @PostMapping("/recipe")
     public Recipes createRecipes(@RequestBody Recipes recipes) {
-//        recipesService.addRecipe(recipes);
+        recipesService.addRecipe(recipes);
         return recipes;
     }
 
@@ -29,46 +29,51 @@ public class RecipesController {
         return recipesService.getRecipesIds();
     }
 
-    @GetMapping("/recipes/vegans")
-    public List<String> getVeganRecipes() {
-        return recipesService.getVeganRecipes();
-    }
-
-    @GetMapping("/recipes/nationalities")
-    public List<String> getRecipesByNationalities() {
-        return recipesService.getNationalities();
-    }
-
     @GetMapping("/recipes")
-    public List<Recipes> getRecipes(@RequestParam(required = false) String nationality, @RequestParam(defaultValue = "10") int limit) {
-        if (nationality != null) {
-            return recipesService.getRecipesByNationalities(nationality, limit);
-        }
-        return recipesService.getAllRecipies(limit);
+    public List<Recipes> getRecipes() {
+        return recipesService.getAllRecipes();
     }
-
-    @GetMapping("/recipe/random")
-    public Recipes getRandomRecipe() {
-        return recipesService.getRandomRecipe();
-    }
-
-    @GetMapping("/recipe/{id}")
-    public Recipes getRecipeById(@PathVariable long id) {
-        return recipesService.getRecipeById(id);
-    }
-
-    // UPDATE
-    @PutMapping("/recipe/{id}")
-    public Recipes updateRecipe(@RequestBody Recipes newRecipe, @PathVariable long id) {
-        newRecipe.setId(id);
-        recipesService.updateRecipe(newRecipe, id);
-        return newRecipe;
-    }
-
-    // Delete
-    @DeleteMapping("/recipe/{id}")
-    public String deleteRecipeById(@PathVariable long id) {
-        recipesService.deleteRecipeById(id);
-        return "Recipe Deleted";
-    }
+//
+//    @GetMapping("/recipes/vegans")
+//    public List<String> getVeganRecipes() {
+//        return recipesService.getVeganRecipes();
+//    }
+//
+//    @GetMapping("/recipes/nationalities")
+//    public List<String> getRecipesByNationalities() {
+//        return recipesService.getNationalities();
+//    }
+//
+//    @GetMapping("/recipes")
+//    public List<Recipes> getRecipes(@RequestParam(required = false) String nationality, @RequestParam(defaultValue = "10") int limit) {
+//        if (nationality != null) {
+//            return recipesService.getRecipesByNationalities(nationality, limit);
+//        }
+//        return recipesService.getAllRecipies(limit);
+//    }
+//
+//    @GetMapping("/recipe/random")
+//    public Recipes getRandomRecipe() {
+//        return recipesService.getRandomRecipe();
+//    }
+//
+//    @GetMapping("/recipe/{id}")
+//    public Recipes getRecipeById(@PathVariable long id) {
+//        return recipesService.getRecipeById(id);
+//    }
+//
+//    // UPDATE
+//    @PutMapping("/recipe/{id}")
+//    public Recipes updateRecipe(@RequestBody Recipes newRecipe, @PathVariable long id) {
+//        newRecipe.setId(id);
+//        recipesService.updateRecipe(newRecipe, id);
+//        return newRecipe;
+//    }
+//
+//    // Delete
+//    @DeleteMapping("/recipe/{id}")
+//    public String deleteRecipeById(@PathVariable long id) {
+//        recipesService.deleteRecipeById(id);
+//        return "Recipe Deleted";
+//    }
 }
