@@ -1,0 +1,36 @@
+@use "../../../styles/main" as *;
+@use "../../../styles/variables" as *;
+
+.roundbtn {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  &__btn {
+    background-color: $color-orange;
+    border: none;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    padding: 3px;
+    &--blink {
+      animation: animate 1.5s linear infinite;
+    }
+    @keyframes animate {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.7;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__btn:hover {
+    cursor: pointer;
+    background-color: $color-blue-green;
+    transform: scale(1.1);
+  }
+}
