@@ -1,5 +1,5 @@
 import React from 'react'
-import ",/FoodsRecipes.scss"
+import "./FoodsRecipes.scss"
 
 const FoodsRecipes = () => {
   return (
