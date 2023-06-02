@@ -18,8 +18,24 @@ public class RecipesRepository {
         return false;
     }
     // CREATE
-
+    public void addRecipe(Recipes recipe) {
+        recipes.add(recipe);
+    }
     // READ
+    public List<Recipes> getAllRecipes() {
+        return recipes;
+    }
+
+    public Recipes getRecipeById(long id) {
+        for (Recipes recipe: recipes) {
+            if(recipe.getId() == id) {
+                return recipe;
+            }
+        }
+        return null;
+    }
+
+
 
 
     // UPDATE
