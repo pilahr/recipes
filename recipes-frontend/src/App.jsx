@@ -1,9 +1,24 @@
-import React from 'react'
+import React from "react";
+import { Router, Routes, Route } from "react-router-dom";
+import Foods from "../src/pages/Foods/Foods";
+import FoodsRecipes from "../src/pages/FoodsRecipes/FoodsRecipes";
+import WelcomePage from "../src/pages/WelcomePage/WelcomePage";
 
 const App = () => {
   return (
-    <div>App</div>
-  )
-}
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<WelcomePage />} />
+        </Routes>
 
-export default App
+        <Routes>
+          <Route path="/recipes" element={<Foods />} />
+          <Route path="/recipe/:recipeId" element={<FoodsRecipes />} />
+        </Routes>
+      </Router>
+    </>
+  );
+};
+
+export default App;
