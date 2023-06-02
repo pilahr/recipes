@@ -2,7 +2,9 @@ import React from "react";
 import "./Foods.scss";
 
 const Foods = () => {
-  return <div>Foods</div>;
+  return <div>
+    <h1>Recipes</h1>
+  </div>;
 };
 
 export default Foods;
