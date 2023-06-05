@@ -20,5 +20,94 @@
     "rating": "8.2",
     "level": "Easy",
     "isVegan": false
+  },
+  {
+    "id": 3,
+    "food_name": "Beef Bibimbap",
+    "nationality": "Korean",
+    "price" : "12.50",
+    "ingredients" :"100g British beef mince, 1 garlic clove, crushed, 1 tbsp white wine vinegar, 1 tbsp gochujang paste (Korean fermented soybean chilli paste, from most large supermarkets), sriracha or similar chilli sauce, plus extra to serve, 1 tbsp soy sauce, Toasted sesame oil for frying, 200g pack stir-fry vegetables, 60g baby leaf spinach, 1 large free-range egg, 130g pouch steamed basmati rice, Sesame seeds to serve, Kimchi to serve (optional; we like Kim Kong kimchi from Planet Organic and Amazon Fresh)",
+    "method": "Using a wooden spoon, combine the beef mince, garlic, vinegar, gochujang and soy sauce in a medium bowl. Heat a glug of sesame oil in a wok or frying pan over a medium heat. Add the mince and stir fry over a high heat for 4-5 minutes until browned and cooked through, then transfer to a plate. Wipe out the pan, add another splash of sesame oil, add the stir-fry vegetables and cook, stirring, over a high heat for 3-4 minutes until starting to soften. Add the spinach and a splash of water and cook for 2-3 minutes until wilted. Transfer the vegetables to a bowl. Heat another splash of sesame oil in the same pan, then crack in the egg and fry for 3-4 minutes until the white is set and crisp at the edges. Meanwhile, heat the rice according to the pack instructions. Put the rice in a shallow bowl, top with the beef mince and vegetables, followed by the fried egg. Drizzle with a little extra gochujang (or other chilli sauce), thinned with a little hot water, sprinkle with sesame seeds and serve with kimchi alongside, if using.",
+    "rating": "7.5",
+    "level": "Medium",
+    "isVegan": false
+  },
+  {
+    "id": 4,
+    "food_name": "Cottage pie",
+    "nationality": "English",
+    "price" : "11",
+    "ingredients" :"Ingredients\nFor the cottage pie filling\n50ml/2fl oz olive oil\n1 large onion or 3–4 banana shallots, finely chopped\n650g/1lb 7oz beef mince\n2 tbsp tomato purée\n1 tbsp plain flour\n150ml/5fl oz red wine\n4 sprigs fresh thyme, leaves only\n400ml/14fl oz beef stock\nWorcestershire sauce, to taste\nsalt and freshly ground black pepper\nFor the mash\n900g/2lb King Edward potatoes, peeled and chopped\n115g/4oz butter\n125ml/4½fl oz milk\nTo serve\n150g/5½oz frozen peas\n50g/1¾oz butter",
+    "method": "Heat half the oil in a large heavy-based pan. Add the onion and cook until softened. Tip it onto a plate.\n\nReturn the pan to the heat and add the remaining oil. When it's hot, fry the mince, in batches if needed, for 4–5 minutes, or until browned all over. Stir in the cooked onion and tomato purée and cook for 1 minute. Stir in the flour and cook for a further minute. Pour in the red wine, scraping up any caramelised bits with a wooden spoon, and add the thyme.\n\nAdd the stock and simmer for 45 minutes, or until the mince is tender and the mixture has thickened. Season to taste, and add a few dashes of Worcestershire sauce. Keep warm over a very low heat. Preheat the grill to high.\n\nMeanwhile, for the mash, put the potatoes in a pan of salted water and bring to the boil. Reduce the heat and simmer for 12–15 minutes, or until they are tender. Drain and return the potatoes to the pan, then place over the heat for about 1 minute to drive off any excess moisture. Mash well, then add the butter and milk, beating to form a smooth mash. Season to taste.\n\nPut the cottage pie filling in a baking dish and spoon the mash over the top. Grill for 8–10 minutes, or until golden-brown.\n\nMeanwhile, boil the peas in boiling water in a small saucepan for 3–4 minutes, then drain and add the butter. Serve the cottage pie with the peas.",
+    "rating": "6.5",
+    "level": "Medium",
+    "isVegan": false
+  },
+  {
+    "id": 5,
+    "food_name": "Cauliflower cheese",
+    "nationality": "English",
+    "price" : "9",
+    "ingredients" :"1 medium cauliflower (around 700g/1lb 9oz), cut into florets, stem sliced and green outer leaves thickly shredded\n50g/1¾oz butter\n50g/1¾oz plain flour\n500ml/18fl oz milk\n120g/4½oz mature cheddar, coarsely grated\n1 tsp English or Dijon mustard\nflaked sea salt and ground black pepper",
+    "method": "Preheat the oven to 200C/180C Fan/Gas 6.\n\nHalf fill a large saucepan with water and bring to the boil. Add the florets, leaves and sliced stem for 4–5 minutes or until the florets are just tender when tested with the tip of knife. Drain in a colander and tip into a shallow baking dish.\n\nPut the butter, flour and milk in a medium saucepan. Whisk together with over a medium heat for 3–4 minutes, or until smooth and thick.\n\nAdd roughly half of the grated cheese and the mustard. Cook for 1 minute, stirring constantly until the cheese melts. Add a splash more milk if the sauce thickens too much. Season with salt and pepper.\n\nPour the cheese sauce over the cooked cauliflower and sprinkle with the remaining cheese.\n\nPlace on a baking tray and bake for 20 minutes, or until lightly browned and bubbling. Serve.",
+    "rating": "6.2",
+    "level": "Medium",
+    "isVegan": false
+  },
+,  {
+  "id": 6,
+  "food_name": "Indian Salad",
+  "nationality": "Indian",
+  "price" : "8.5",
+  "ingredients" :"225g/8oz cucumber, cut into ½cm cubes\n225g/8oz tomatoes, cut into ½cm cubes\n100g/3½oz red onions, cut into ½cm cubes\n50g/1¾oz pomegranate seeds\n2–3 green chillies, finely chopped\n¼ tsp salt\n4 tbsp lime or lemon juice\nfresh mint sprigs, to garnish",
+  "method": "Mix the cucumber, tomatoes, onions, pomegranate seeds and chilli together in a large bowl. Season with salt, then dress with the lime or lemon juice. Serve immediately, garnished with a few fresh mint sprigs.",
+  "rating": "6.5",
+  "level": "Easy",
+  "isVegan": true
+},
+  {
+    "id": 7,
+    "food_name": "Chashu Pork Ramen",
+    "nationality": "Japanese",
+    "price" : "11",
+    "ingredients" :"750g/1lb 10oz ramen noodles (alternatively use udon noodles)\ndrizzle sesame oil\n2.5 litres/4½ pints toridashi stock\n30g/1oz fresh root ginger, cut into 4 thick slices\n2 garlic cloves, cut into slithers\n10 fresh shiitake mushrooms, cut into slithers\n1 carrot, cut into matchsticks\n100g/3½oz shimeji mushrooms\n200g/7oz soya beansprouts (or beansprouts)\n50g/1¾oz sliced bamboo shoots\n100g/3½oz enoki mushrooms\n200g/7oz choi sum, ends trimmed and cut in half\n500g/1lb 2oz chashu pork, about 16 slices\n4 spring onion, cut on the diagonal\n1 long red chilli, finely sliced on a diagonal\n4 whole tomago eggs, halved",
+    "method": "Cook the noodles following the instructions on the packet. Once cooked, drain and drizzle with a little sesame oil to stop the noodles from sticking.\n\nHeat the stock in a large pan with the ginger, garlic, shiitake mushrooms and carrots.\n\nSimmer for 5-8 minutes. Add the shimeji mushrooms.\n\nCarefully arrange the warm noodles, beansprouts, bamboo shoots, enoki mushrooms, choi sum and sliced pork in four large serving bowls.\n\nCarefully pour the stock over the pork and vegetables with a ladle. Top with the spring onions and sliced chilli.\n\nCarefully half the eggs and place on the top of each serving.\n\nServe at once with a drizzle of chilli oil, a sprinkling of shichimi togarashi (Japanese seven-spice seasoning) and a flourish of dried tuna flakes (if liked).",
+    "rating": "8.5",
+    "level": "Medium",
+    "isVegan": false
+  },
+  {
+    "id": 8,
+    "food_name": "Thai Fishcakes",
+    "nationality": "Thai",
+    "price" : "8",
+    "ingredients" :"500g/1lb 2oz fish fillets (whiting, pollock, coley, etc)\n½ red pepper, chopped\n2 red chillies, chopped\n2 tbsp coriander\n3 spring onions, finely chopped\n2 cloves garlic, chopped\n1 stalk lemongrass, tender part only, chopped\n1 tbsp fish sauce\n125ml/4fl oz coconut milk\n1 whole egg\n125g/4½oz green beans\nvegetable oil",
+    "method": "Cut the fish into small pieces. Place the pepper, chillies, coriander, spring onions, garlic, lemongrass and fish sauce into a food processor and blend to a paste.\n\nAdd the fish pieces to the paste and blend well. Mix to a smooth paste adding coconut milk and egg.\n\nPlace the mixture in a bowl. Slice the beans finely into 3mm (1/8in) and stir into fish paste. Chill in refrigerator overnight or for at least two hours.\n\nHalf-fill a heavy-based frying pan with oil and heat over a medium to high heat. (CAUTION: Hot oil can be dangerous. Do not leave unattended.) Shape the chilled paste into small patties with the help of a spoon. Carefully lower the fish patties into the hot oil, in batches (the oil should reach halfway up the sides of the patties). Fry until crisp and brown, turning once during cooking. Remove from the oil using a slotted spoon and set aside to drain on kitchen paper. Repeat the",
+    "rating": "6.5",
+    "level": "Medium",
+    "isVegan": false
+  },
+  {
+    "id": 9,
+    "food_name": "Mapo Tofu",
+    "nationality": "Chinese",
+    "price" : "8.90",
+    "ingredients" :"2 tbsp peanut oil\n2 garlic cloves, finely chopped\n2.5cm/1in piece fresh root ginger, peeled and grated\n1 red chilli, seeds removed, finely chopped\n1 tbsp fermented salted black beans, rinsed and crushed\n1 tbsp chilli bean paste\n150g/5½oz fresh sweetcorn kernels\n250g/9oz firm tofu, drained, sliced into 2.5cm/1in cubes\n1 tbsp Shaoxing rice wine or dry sherry\n1 tbsp tamari or low sodium light soy sauce\n1 tbsp black rice vinegar or balsamic\n200ml/7fl oz hot vegetable stock (made using ½ a stock cube or stock pot)\n1 tbsp Sichuan preserved vegetables in chilli oil, finely chopped (available from Asian supermarkets)\n1 tbsp cornflour, blended with 2 tbsp cold water",
+    "method": "Heat the peanut oil in wok over a high heat then add the garlic, ginger and chilli. Stir-fry for a few seconds, then add the fermented salted black beans, chilli bean paste, sweetcorn and tofu and stir-fry for 10 seconds.\n\nAdd the rice wine, tamari, vinegar and stock and bring to the boil. Stir in the Sichuan preserved vegetables and blended cornflour.\n\nGarnish with the ground peppercorns, spring onion, sesame seeds, coriander and serve with some cooked jasmine rice.",
+    "rating": "7.2",
+    "level": "Medium",
+    "isVegan": false
+  },
+  {
+    "id": 10,
+    "food_name": "Raksa Noodle Soup",
+    "nationality": "Malaysian",
+    "price" : "11.90",
+    "ingredients" :"2 chicken breasts, roughly chopped\n150g of king prawns, peeled\n1 tbsp of vegetable oil\n1 tbsp of sesame oil\n1 stick of lemongrass (1), bashed, tough outer layer removed and finely chopped\n3 spring onions, sliced\n2 garlic cloves, finely chopped\nfresh ginger, thumb-sized piece, peeled and finely chopped\n1 red chilli, deseeded and finely chopped\n500ml of chicken stock\n400ml of coconut milk\njuice of half a lime, reserve the squeezed lime half\n1 tbsp of fish sauce\n1 tsp tomato purée\n1 tsp peanut butter\n1 tsp palm sugar, or light brown sugar\n1/2 tsp ground turmeric, or a few strands of saffron\n200g of rice noodles\ncoriander leaves, to garnish",
+    "method": "1 Heat both the oils in a large pan and half of the chopped lemongrass along with the spring onions, garlic, ginger and red chilli. Stir-fry over a low-medium heat for 2 minutes\n2\nAdd the chicken and prawns and cook for a further 2–3 minutes, until coloured\n3\nPour in the stock, coconut milk and lime juice and bring to a good simmer. Throw in the remaining lemongrass and the squeezed lime half\n4\nAdd a tablespoon of fish sauce, the tomato purée, peanut butter, sugar and turmeric or saffron, if using (the turmeric or saffron will give the soup a lovely deep colour but are not essential). Simmer the soup gently for about 10 minutes\n5\nMeanwhile, place the rice noodles in a bowl and cover with boiling water; leave for 5 minutes, then drain and add to the soup. Mix well and taste, adding more fish sauce or a squeeze of lime if you think it needs it\n6\nServe ladled into deep bowls and garnish with coriander",
+    "rating": "7.8",
+    "level": "Medium",
+    "isVegan": false
   }
+
 ]
