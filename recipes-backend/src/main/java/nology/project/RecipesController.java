@@ -46,12 +46,14 @@ public class RecipesController {
         }
         return recipesService.getAllRecipes(limit);
     }
-//
+
+    //
     @GetMapping("/recipe/random")
     public Recipes getRandomRecipe() {
         return recipesService.getRandomRecipe();
     }
-//
+
+    //
     @GetMapping("/recipe/{id}")
     public Recipes getRecipeById(@PathVariable long id) {
         return recipesService.getRecipeById(id);
@@ -65,7 +67,7 @@ public class RecipesController {
         return newRecipe;
     }
 
-//    // Delete
+    //    // Delete
     @DeleteMapping("/recipe/{id}")
     public String deleteRecipeById(@PathVariable long id) {
         recipesService.deleteRecipeById(id);

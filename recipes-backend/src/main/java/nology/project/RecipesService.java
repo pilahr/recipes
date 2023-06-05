@@ -27,7 +27,7 @@ public class RecipesService {
 
     public Recipes getRecipeById(long id) {
         Optional<Recipes> recipe = recipesRepository.findById(id);
-        if(recipe.isEmpty()) {
+        if (recipe.isEmpty()) {
             throw new RecipesNotFoundException();
         }
         return recipe.get();
@@ -60,15 +60,16 @@ public class RecipesService {
         return recipesRepository.getVeganRecipes();
     }
 
-     // UPDATE
+    // UPDATE
     public void updateRecipe(Recipes newRecipe, long id) {
         if (!recipesRepository.existsById(id)) {
             throw new RecipesNotFoundException();
         }
+        newRecipe.setId(id);
         recipesRepository.save(newRecipe);
     }
 
-//    // DELETE
+    //    // DELETE
     @Transactional
     public void deleteRecipeById(long id) {
         if (!recipesRepository.existsById(id)) {
