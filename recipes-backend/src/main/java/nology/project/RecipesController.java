@@ -18,7 +18,7 @@ public class RecipesController {
 
     // CREATE
     @PostMapping("/recipe")
-    public Recipes createRecipes(@RequestBody Recipes recipe) {
+    public Recipes createRecipe(@RequestBody Recipes recipe) {
         recipesService.addRecipe(recipe);
         return recipe;
     }
@@ -67,7 +67,7 @@ public class RecipesController {
         return newRecipe;
     }
 
-    //    // Delete
+    // Delete
     @DeleteMapping("/recipe/{id}")
     public String deleteRecipeById(@PathVariable long id) {
         recipesService.deleteRecipeById(id);

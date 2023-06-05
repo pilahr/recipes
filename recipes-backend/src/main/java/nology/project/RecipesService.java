@@ -66,10 +66,11 @@ public class RecipesService {
             throw new RecipesNotFoundException();
         }
         newRecipe.setId(id);
+
         recipesRepository.save(newRecipe);
     }
 
-    //    // DELETE
+    // DELETE
     @Transactional
     public void deleteRecipeById(long id) {
         if (!recipesRepository.existsById(id)) {
