@@ -1,44 +1,27 @@
 package nology.project;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class RecipesRepository {
-    private final List<Recipes> recipes = new ArrayList<>();
+public interface RecipesRepository extends JpaRepository<Recipes, Long> {
 
-    public boolean hasRecipe(long id) { // check if it has id
-        for(Recipes recipe: recipes) {
-            if (recipe.getId() == id) {
-                return true;
-            }
-        }
-        return false;
-    }
-    // CREATE
-    public void addRecipe(Recipes recipe) {
-        recipes.add(recipe);
-    }
-    // READ
-    public List<Recipes> getAllRecipes() {
-        return recipes;
-    }
+    void deleteRecipeById(long id);
 
-    public Recipes getRecipeById(long id) {
-        for (Recipes recipe: recipes) {
-            if(recipe.getId() == id) {
-                return recipe;
-            }
-        }
-        return null;
-    }
+    List<Recipes> getAllRecipesByNationality(String nationality);
 
+    @Query(value = "SELECT DISTINCT nationality FROM recipes ORDER BY nationality", nativeQuery = true)
+    List<String> getDistinctNationality();
 
+    @Query(value = "SELECT DISTINCT id FROM recipes", nativeQuery = true)
+    List<Long> getDistinctId();
 
+    @Query(value = "SELECT * FROM recipes ORDER BY RAND() LIMIT 1", nativeQuery = true)
+    Recipes getRandomRecipe();
 
-    // UPDATE
-    // DELETE
-
+    @Query(value = "SELECT * FROM recipes WHERE isVegan = 'true'", nativeQuery = true)
+    List<Recipes> getVeganRecipes();
 }

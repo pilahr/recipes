@@ -1,20 +1,31 @@
 package nology.project;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Recipes {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private static long nextId = 1;
     private String foodName;
     private String nationality;
-    private float price;
+    private double price;
     private String ingredients;
     private String method;
-    private float rating;
+    private double rating;
     private String level;
     private boolean isVegan;
 
-    public Recipes(long id, String foodName, String nationality, float price, String ingredients, String method, float rating, String level, boolean isVegan) {
+    public Recipes() {
+
+    }
+
+    public Recipes(long id, String foodName, String nationality, double price, String ingredients, String method, double rating, String level, boolean isVegan) {
         this.id = id;
-        nextId++;
         this.foodName = foodName;
         this.nationality = nationality;
         this.price = price;
@@ -23,10 +34,6 @@ public class Recipes {
         this.rating = rating;
         this.level = level;
         this.isVegan = isVegan;
-    }
-
-    public long generateId() {
-        return id++;
     }
 
     public long getId() {
@@ -53,11 +60,11 @@ public class Recipes {
         this.nationality = nationality;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -77,11 +84,11 @@ public class Recipes {
         this.method = method;
     }
 
-    public float getRating() {
+    public double getRating() {
         return rating;
     }
 
-    public void setRating(float rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
 
