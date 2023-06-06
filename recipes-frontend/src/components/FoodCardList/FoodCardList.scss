@@ -1,0 +1,33 @@
+@use "../../styles/main" as *;
+@use "../../styles/variables" as *;
+
+.foodcard-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: 40px auto;
+  gap: 40px;
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  .foodcard-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .foodcard-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: $large-desktop-breakpoint) {
+  .foodcard-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
