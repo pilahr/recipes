@@ -5,17 +5,18 @@
   border: 2px solid $color-orange;
   border-radius: 5px;
   box-shadow: 2px 2px 5px $text-gray;
-  width: 240px;
-  height: auto;
+  width: 260px;
+  height: 480px;
   padding: 10px;
   margin: 20px;
 
   &__image {
-    width: 180px;
+    width: 200px;
     height: 180px;
-    border: 1px solid $text-gray;
+
     box-shadow: 2px 2px 2px $text-gray;
-    margin: 10px;
+    margin: 20px;
+    border-radius: 5px;
   }
 
   &__rating {
@@ -27,7 +28,9 @@
     font-size: 14px;
   }
 
-  &__nationality, &__level, &__price {
+  &__nationality,
+  &__level,
+  &__price {
     color: $text-gray;
   }
 }
