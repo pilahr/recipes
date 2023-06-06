@@ -2,7 +2,7 @@ import React from "react";
 import "./Searchbox.scss";
 import Search from "../../assets/images/search.png";
 
-const Searchbox = ({ handleSearchInput, searchTerm }) => {
+const Searchbox = ({ label, handleSearchInput, searchTerm }) => {
   return (
     <div className="search">
       <div className="searchbox">
@@ -13,6 +13,7 @@ const Searchbox = ({ handleSearchInput, searchTerm }) => {
             placeholder="Search for the recipe.."
             onInput={handleSearchInput}
             value={searchTerm}
+            name={label}
           />
           <img
             className="searchbox__wrap--icon"

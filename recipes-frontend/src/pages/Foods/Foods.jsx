@@ -23,10 +23,9 @@ const Foods = () => {
     const lowerCaseSearchedResult = event.target.value.toLowerCase();
     setSearchTerm(lowerCaseSearchedResult);
   };
-  // const searchRecipe = recipes.filter((recipe) => {
-  //   console.log(recipe.foodName);
-  //   return recipe.foodName.toLowerCase().includes(searchTerm.toLowerCase());
-  // });
+  const searchRecipe = recipes.filter((recipe) => {
+    return recipe.foodName.toLowerCase().includes(searchTerm);
+  });
 
   return (
     <div>
@@ -35,13 +34,13 @@ const Foods = () => {
       </div>
       <div>
         <Searchbox
-          searchTerms={searchTerm}
+          searchTerm={searchTerm}
           handleSearchInput={handleSearchInput}
-          searchRecipe={searchRecipe}
+          label="recipes"
         />
       </div>
       <div>
-        <FoodCardList recipes={recipes} />
+        <FoodCardList recipes={recipes} recipesArr={searchRecipe} />
       </div>
     </div>
   );
