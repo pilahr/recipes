@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import "./Foods.scss";
 import Heading from "../../components/Heading/Heading";
 import Searchbox from "../../components/Searchbox/Searchbox";
+import FoodCard from "../../components/FoodCard/FoodCard";
 
 const Foods = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -18,6 +19,9 @@ const Foods = () => {
       <div>
         <Searchbox searchTerms={searchTerm}
         handleSearchInput = {handleSearchInput}/>
+      </div>
+      <div>
+        <FoodCard />
       </div>
     </div>
   );
