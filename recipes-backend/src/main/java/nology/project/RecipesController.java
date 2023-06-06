@@ -1,11 +1,14 @@
 package nology.project;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class RecipesController {
 
     @Autowired
@@ -18,59 +21,57 @@ public class RecipesController {
 
     // CREATE
     @PostMapping("/recipe")
-    public Recipes createRecipe(@RequestBody Recipes recipe) {
+    public ResponseEntity<Recipes> createRecipe(@RequestBody Recipes recipe) {
         recipesService.addRecipe(recipe);
-        return recipe;
+        return ResponseEntity.status(HttpStatus.CREATED).body(recipe);
     }
 
     // READ
     @GetMapping("/recipes/ids")
-    public List<Long> getRecipesIds() {
-        return recipesService.getRecipesIds();
+    public ResponseEntity<List<Long>> getRecipesIds() {
+        return ResponseEntity.status(HttpStatus.OK).body(recipesService.getRecipesIds());
     }
 
     @GetMapping("/recipes/nationalities")
-    public List<String> getRecipesByNationalities() {
-        return recipesService.getNationalities();
+    public ResponseEntity<List<String>> getRecipesByNationalities() {
+        return ResponseEntity.status(HttpStatus.OK).body(recipesService.getNationalities());
     }
 
     @GetMapping("/recipes/vegans")
-    public List<Recipes> getVeganRecipes() {
-        return recipesService.getVeganRecipes();
+    public ResponseEntity<List<Recipes>> getVeganRecipes() {
+        return ResponseEntity.status(HttpStatus.OK).body(recipesService.getVeganRecipes());
     }
 
     @GetMapping("/recipes")
-    public List<Recipes> getRecipes(@RequestParam(required = false) String nationality, @RequestParam(defaultValue = "10") int limit) {
+    public ResponseEntity<List<Recipes>> getRecipes(@RequestParam(required = false) String nationality, @RequestParam(defaultValue = "10") int limit) {
         if (nationality != null) {
-            return recipesService.getRecipesByNationality(nationality, limit);
+            return ResponseEntity.status(HttpStatus.OK).body(recipesService.getRecipesByNationality(nationality, limit));
         }
-        return recipesService.getAllRecipes(limit);
+        return ResponseEntity.status(HttpStatus.OK).body(recipesService.getAllRecipes(limit));
     }
 
-    //
     @GetMapping("/recipe/random")
-    public Recipes getRandomRecipe() {
-        return recipesService.getRandomRecipe();
+    public ResponseEntity<Recipes> getRandomRecipe() {
+        return ResponseEntity.status(HttpStatus.OK).body(recipesService.getRandomRecipe());
     }
 
-    //
     @GetMapping("/recipe/{id}")
-    public Recipes getRecipeById(@PathVariable long id) {
-        return recipesService.getRecipeById(id);
+    public ResponseEntity<Recipes> getRecipeById(@PathVariable long id) {
+        return ResponseEntity.status(HttpStatus.OK).body(recipesService.getRecipeById(id));
     }
 
     // UPDATE
     @PutMapping("/recipe/{id}")
-    public Recipes updateRecipe(@RequestBody Recipes newRecipe, @PathVariable long id) {
+    public ResponseEntity<Recipes> updateRecipe(@RequestBody Recipes newRecipe, @PathVariable long id) {
         newRecipe.setId(id);
         recipesService.updateRecipe(newRecipe, id);
-        return newRecipe;
+        return ResponseEntity.status(HttpStatus.OK).body(newRecipe);
     }
 
     // Delete
     @DeleteMapping("/recipe/{id}")
-    public String deleteRecipeById(@PathVariable long id) {
+    public ResponseEntity<String> deleteRecipeById(@PathVariable long id) {
         recipesService.deleteRecipeById(id);
-        return "Recipe Deleted";
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

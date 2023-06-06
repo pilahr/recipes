@@ -22,6 +22,6 @@ public interface RecipesRepository extends JpaRepository<Recipes, Long> {
     @Query(value = "SELECT * FROM recipes ORDER BY RAND() LIMIT 1", nativeQuery = true)
     Recipes getRandomRecipe();
 
-    @Query(value = "SELECT * FROM recipes WHERE isVegan = 'true'", nativeQuery = true)
+    @Query(value = "SELECT * FROM recipes WHERE is_vegan = true", nativeQuery = true)
     List<Recipes> getVeganRecipes();
 }
