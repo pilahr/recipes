@@ -3,14 +3,14 @@
 
 .food-recipe {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
   padding: 20px;
+  align-items: center;
 
   &__image {
-    
     &--food {
-      width: 420px;
-      height: 340px;
+      width: 240px;
+      height: 200px;
       border-radius: 10px;
     }
   }
@@ -19,9 +19,9 @@
     overflow-y: scroll;
 
     &--heading {
-      height: 200ox;
+      height: 2rem;
+      margin-top: 10px;
     }
-
     &--level {
       color: $text-gray;
       background-color: $color-blue-green;
@@ -29,12 +29,47 @@
       border-radius: 10px;
       padding: 10px;
     }
-
-    &--head {
-      margin-top: 20px;
-    }
     &--text {
       color: $text-gray;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  .food-recipe {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+
+    &__image {
+      &--food {
+        width: 420px;
+        height: 340px;
+      }
+    }
+
+    &__content {
+      &--heading {
+      }
+
+      &--head {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $large-desktop-breakpoint) {
+  .food-recipe {
+    &__image {
+        &--food {
+            width: 600px;
+            height: 400px;
+        }
+    }
+    &__content {
+        width: 50%;
     }
   }
 }
