@@ -20,11 +20,13 @@ public class Recipes {
     private String level;
     private boolean isVegan;
 
+    private String imageUrl;
+
     public Recipes() {
 
     }
 
-    public Recipes(long id, String foodName, String nationality, double price, String ingredients, String method, double rating, String level, boolean isVegan) {
+    public Recipes(long id, String foodName, String nationality, double price, String ingredients, String method, double rating, String level, boolean isVegan, String imageUrl) {
         this.id = id;
         this.foodName = foodName;
         this.nationality = nationality;
@@ -34,6 +36,7 @@ public class Recipes {
         this.rating = rating;
         this.level = level;
         this.isVegan = isVegan;
+        this.imageUrl = imageUrl;
     }
 
     public long getId() {
@@ -106,5 +109,13 @@ public class Recipes {
 
     public void setVegan(boolean vegan) {
         isVegan = vegan;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
