@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 const FoodCardList = ({ recipes }) => {
   return (
     <div className="foodcard-list">
-      {recipes.map((recipe) => (
-        <FoodCard recipe={recipe} />
+      {recipes.map((recipe, index) => (
+        <FoodCard key={index} recipe={recipe} />
 
         //   <Link key={recipe.id} to={`/recipe/edit/${recipe.id}`}>
         //     <FoodCard recipe={recipe} />

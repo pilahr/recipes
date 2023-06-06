@@ -2,21 +2,25 @@
 @use "../../styles/variables" as *;
 
 .foodcard {
-  border: 2px solid $color-orange;
+  border: 1px solid $color-gray;
   border-radius: 5px;
-  box-shadow: 2px 2px 5px $text-gray;
+  box-shadow: 2px 2px 5px $color-gray;
   width: 260px;
-  height: 480px;
+  height: 440px;
   padding: 10px;
   margin: 20px;
+  padding-left: 15px;
 
   &__image {
     width: 200px;
     height: 180px;
-
     box-shadow: 2px 2px 2px $text-gray;
-    margin: 20px;
+    margin: 15px;
     border-radius: 5px;
+  }
+
+  &__title {
+    height: 80px;
   }
 
   &__rating {
