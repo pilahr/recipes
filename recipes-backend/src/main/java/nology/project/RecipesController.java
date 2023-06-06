@@ -43,7 +43,7 @@ public class RecipesController {
     }
 
     @GetMapping("/recipes")
-    public ResponseEntity<List<Recipes>> getRecipes(@RequestParam(required = false) String nationality, @RequestParam(defaultValue = "10") int limit) {
+    public ResponseEntity<List<Recipes>> getRecipes(@RequestParam(required = false) String nationality, @RequestParam(defaultValue = "20") int limit) {
         if (nationality != null) {
             return ResponseEntity.status(HttpStatus.OK).body(recipesService.getRecipesByNationality(nationality, limit));
         }
