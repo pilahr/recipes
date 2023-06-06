@@ -1,0 +1,40 @@
+@use "../../styles/main" as *;
+@use "../../styles/variables" as *;
+
+.food-recipe {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+
+  &__image {
+    
+    &--food {
+      width: 420px;
+      height: 340px;
+      border-radius: 10px;
+    }
+  }
+
+  &__content {
+    overflow-y: scroll;
+
+    &--heading {
+      height: 200ox;
+    }
+
+    &--level {
+      color: $text-gray;
+      background-color: $color-blue-green;
+      max-width: fit-content;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    &--head {
+      margin-top: 20px;
+    }
+    &--text {
+      color: $text-gray;
+    }
+  }
+}
