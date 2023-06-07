@@ -31,4 +31,5 @@ public class Option implements OptionContract{
     public void setName(String name) {
         this.name = name;
     }
+
 }

@@ -5,13 +5,14 @@ import nology.project.responses.OptionContract;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "levels")
-public class Level implements OptionContract {
+@Table(name = "vegans")
+public class Vegan implements OptionContract {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String name;//easy, medium, difficult
+    private String name;//vegan, not vegan
+    private boolean isVegan;//true, false
 
 //    @Override
     public long getId() {
@@ -31,12 +32,20 @@ public class Level implements OptionContract {
         this.name = name;
     }
 
+    public boolean isVegan() {
+        return isVegan;
+    }
+
+    public void setVegan(boolean vegan) {
+        isVegan = vegan;
+    }
 
     @Override
     public String toString() {
-        return "Level{" +
+        return "Vegan{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", isVegan=" + isVegan +
                 '}';
     }
 }
