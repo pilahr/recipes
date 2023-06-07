@@ -1,5 +1,6 @@
 package nology.project;
 
+import nology.project.models.Recipes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

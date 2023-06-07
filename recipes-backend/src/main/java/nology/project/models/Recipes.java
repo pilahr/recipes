@@ -1,4 +1,4 @@
-package nology.project;
+package nology.project.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

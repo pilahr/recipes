@@ -1,5 +1,7 @@
 package nology.project;
 
+import nology.project.models.Recipes;
+import nology.project.repositories.RecipesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
