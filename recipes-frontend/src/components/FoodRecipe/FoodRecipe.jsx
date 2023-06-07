@@ -2,7 +2,17 @@ import React from "react";
 import "./FoodRecipe.scss";
 
 const FoodRecipe = ({ recipe }) => {
-  const { foodName, ingredients, method, imageUrl, level } = recipe;
+  const {
+    foodName,
+    ingredients,
+    method,
+    imageUrl,
+    level,
+    // level: { name },
+  } = recipe;
+  console.log(recipe);
+  console.log(foodName);
+
   return (
     <div className="food-recipe">
       <div className="food-recipe__image">
@@ -15,7 +25,7 @@ const FoodRecipe = ({ recipe }) => {
 
       <div className="food-recipe__content">
         <h3 className="food-recipe__content--heading">{foodName}</h3>
-        <p className="food-recipe__content--level">Difficulty: {level}</p>
+        {/* <p className="food-recipe__content--level">Difficulty: {level.name}</p> */}
         <h4 className="food-recipe__content--head">Ingredients</h4>
         <p className="food-recipe__content--text">{ingredients}</p>
         <h4 className="food-recipe__content--head">Method</h4>
