@@ -1,9 +1,8 @@
 package nology.project.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.context.annotation.EnableMBeanExport;
+
+import javax.persistence.*;
 
 @Entity
 public class Recipes {
@@ -16,11 +15,32 @@ public class Recipes {
     private double price;
     private String ingredients;
     private String method;
-    private double rating;
-    private String level;
-    private boolean isVegan;
+//    private double rating;
+//    private String level;
+//    private boolean isVegan;
 
     private String imageUrl;
+
+    @Column(name = "rating_id")
+    private long ratingId;
+
+    @OneToOne
+    @JoinColumn(name = "rating_id", insertable = false, updatable = false)
+    private Rating rating;
+
+    @Column(name = "vegan_id")
+    private long veganId;
+
+    @ManyToOne
+    @JoinColumn(name = "vegan_id", insertable = false, updatable = false)
+    private Vegan vegan;
+
+    @Column(name = "level_id")
+    private long levelId;
+
+    @ManyToOne
+    @JoinColumn(name = "level_id", insertable = false, updatable = false)
+    private Level level;
 
     public Recipes() {
 
@@ -33,9 +53,9 @@ public class Recipes {
         this.price = price;
         this.ingredients = ingredients;
         this.method = method;
-        this.rating = rating;
-        this.level = level;
-        this.isVegan = isVegan;
+//        this.rating = rating;
+//        this.level = level;
+//        this.isVegan = isVegan;
         this.imageUrl = imageUrl;
     }
 
@@ -87,29 +107,29 @@ public class Recipes {
         this.method = method;
     }
 
-    public double getRating() {
-        return rating;
-    }
-
-    public void setRating(double rating) {
-        this.rating = rating;
-    }
-
-    public String getLevel() {
-        return level;
-    }
-
-    public void setLevel(String level) {
-        this.level = level;
-    }
-
-    public boolean isVegan() {
-        return isVegan;
-    }
-
-    public void setVegan(boolean vegan) {
-        isVegan = vegan;
-    }
+//    public double getRating() {
+//        return rating;
+//    }
+//
+//    public void setRating(double rating) {
+//        this.rating = rating;
+//    }
+//
+//    public String getLevel() {
+//        return level;
+//    }
+//
+//    public void setLevel(String level) {
+//        this.level = level;
+//    }
+//
+//    public boolean isVegan() {
+//        return isVegan;
+//    }
+//
+//    public void setVegan(boolean vegan) {
+//        isVegan = vegan;
+//    }
 
     public String getImageUrl() {
         return imageUrl;
@@ -117,5 +137,72 @@ public class Recipes {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public long getRatingId() {
+        return ratingId;
+    }
+
+    public void setRatingId(long ratingId) {
+        this.ratingId = ratingId;
+    }
+
+    public Rating getRating() {
+        return rating;
+    }
+
+    public void setRating(Rating rating) {
+        this.rating = rating;
+    }
+
+    public long getVeganId() {
+        return veganId;
+    }
+
+    public void setVeganId(long veganId) {
+        this.veganId = veganId;
+    }
+
+    public Vegan getVegan() {
+        return vegan;
+    }
+
+    public void setVegan(Vegan vegan) {
+        this.vegan = vegan;
+    }
+
+    public long getLevelId() {
+        return levelId;
+    }
+
+    public void setLevelId(long levelId) {
+        this.levelId = levelId;
+    }
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
+    }
+
+    @Override
+    public String toString() {
+        return "Recipes{" +
+                "id=" + id +
+                ", foodName='" + foodName + '\'' +
+                ", nationality='" + nationality + '\'' +
+                ", price=" + price +
+                ", ingredients='" + ingredients + '\'' +
+                ", method='" + method + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", ratingId=" + ratingId +
+                ", rating=" + rating +
+                ", veganId=" + veganId +
+                ", vegan=" + vegan +
+                ", levelId=" + levelId +
+                ", level=" + level +
+                '}';
     }
 }

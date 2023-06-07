@@ -17,12 +17,12 @@ public interface RecipesRepository extends JpaRepository<Recipes, Long> {
     @Query(value = "SELECT DISTINCT nationality FROM recipes ORDER BY nationality", nativeQuery = true)
     List<String> getDistinctNationality();
 
-    @Query(value = "SELECT DISTINCT id FROM recipes", nativeQuery = true)
+    @Query(value = "SELECT DISTINCT id FROM recipes ORDER BY id", nativeQuery = true)
     List<Long> getDistinctId();
 
     @Query(value = "SELECT * FROM recipes ORDER BY RAND() LIMIT 1", nativeQuery = true)
     Recipes getRandomRecipe();
 
-    @Query(value = "SELECT * FROM recipes WHERE is_vegan = true", nativeQuery = true)
+    @Query(value = "SELECT * FROM recipes INNER JOIN vegans ON recipes.vegan_id = vegans.id WHERE is_vegan = true", nativeQuery = true)
     List<Recipes> getVeganRecipes();
 }
