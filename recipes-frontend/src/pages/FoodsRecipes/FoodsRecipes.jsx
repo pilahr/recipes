@@ -6,7 +6,8 @@ import Heading from "../../components/Heading/Heading";
 import Button from "../../components/Buttons/Button/Button";
 import Form from "../../components/Form/Form";
 
-const FoodsRecipes = () => {
+const FoodsRecipes = ({ recipes }) => {
+ 
   const { id } = useParams();
   const navigate = useNavigate();
   const [recipe, setRecipe] = useState([]);
@@ -58,7 +59,9 @@ const FoodsRecipes = () => {
     }
   };
 
-  const handleShowForm = () => setShowForm(!showForm);
+  const handleShowForm = () => {
+    setShowForm(!showForm);
+  };
 
   return (
     <div className="foods-recipes">
@@ -77,7 +80,14 @@ const FoodsRecipes = () => {
           <Button buttonText="Delete" func="delete" onClick={handleDelete} />
         </div>
       </div>
-      <Form title="Update Recipe" defaultFormState={recipe} />
+      <div className="food-recipes__form">
+        <Form
+          title="Update Recipe"
+          recipeById={recipe}
+          handleSubmit={handleUpdate}
+        
+        />
+      </div>
     </div>
   );
 };

@@ -2,13 +2,19 @@
 @use "../../styles/variables" as *;
 
 .form-container {
-  position: absolute;
   width: 70%;
   border: 2px solid $color-gray;
   border-radius: 3px;
   box-shadow: 0px 2px 5px $color-gray;
   padding: 20px;
   margin: 20px;
+  position: absolute;
+  top: 10%;
+  left: 10px;
+  transform: translateY(-10%);
+  background-color: white;
+  opacity: 1;
+  transition: opacity 2s ease-in-out;
 
   &__title {
     text-align: center;
@@ -27,6 +33,7 @@
       border: 1px solid $color-gray;
       padding-left: 5px;
       margin-top: 3px;
+      font-family: "Roboto";
     }
 
     &--select {
@@ -35,8 +42,19 @@
       border: 1px solid $color-gray;
       padding-left: 5px;
       margin-top: 3px;
+      font-family: "Roboto";
     }
-
-   
   }
 }
+
+@media screen and (min-width: $tablet-breakpoint) {
+  .form-container {
+    left: 120px;
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+    .form-container {
+      left: 220px;
+    }
+  }
