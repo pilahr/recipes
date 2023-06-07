@@ -7,25 +7,27 @@
       display: none;
     }
     &--button {
-        display: flex;
-        justify-content: center;
+      display: flex;
+      justify-content: center;
     }
   }
+
+
 }
 
-@media screen and (min-width: $tablet-breakpoint) {
-    .foods-recipes {
-        &__main {
-          &--desktop-button {
-            display: flex;
-            padding: 20px;
-            position: absolute;
-            right: 0;
-          }
-
-          &--button {
-            display: none;
-          }
-        }
+@media screen and (min-width: $desktop-breakpoint) {
+  .foods-recipes {
+    &__main {
+      &--desktop-button {
+        display: flex;
+        padding: 20px;
+        position: absolute;
+        right: 0;
       }
+
+      &--button {
+        display: none;
+      }
+    }
+  }
 }

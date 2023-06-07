@@ -10,8 +10,7 @@ const FoodRecipe = ({ recipe }) => {
     level,
     // level: { name },
   } = recipe;
-  console.log(recipe);
-  console.log(foodName);
+
 
   return (
     <div className="food-recipe">
