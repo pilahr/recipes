@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Heading.scss";
-import Menu from "../../assets/images/menu.png";
+
 import Home from "../../assets/images/home.png";
+import Add from "../../assets/images/add.png";
 
 const Heading = () => {
   return (
@@ -14,8 +15,11 @@ const Heading = () => {
 
         <h3 className="heading__header">Piya's Favourite Recipes</h3>
 
-        <Link>
-          <img className="heading__img-menu" src={Menu} alt="menu icon" />
+        <Link to="/recipe/create">
+          <div className="heading__add">
+            <h4 className="heading__add--head">Add Recipe</h4>
+            <img className="heading__add--img-add" src={Add} alt="menu icon" />
+          </div>
         </Link>
       </div>
     </div>

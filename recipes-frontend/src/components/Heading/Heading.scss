@@ -13,14 +13,25 @@
     height: 3.5rem;
   }
 
-  &__img-menu {
-    height: 3rem;
-    right: 0;
-  }
-
   &__header {
     padding-left: 10px;
     padding-top: 10px;
     color: $text-gray;
+  }
+
+  &__add {
+    display: flex;
+    align-items: center;
+    width: 190px;
+    padding: 10px;
+    &--head {
+      color: $text-gray;
+      text-align: right;
+    }
+
+    &--img-add {
+      height: 2rem;
+      right: 0;
+    }
   }
 }

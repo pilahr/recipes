@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Foods from "../src/pages/Foods/Foods";
 import FoodsRecipes from "../src/pages/FoodsRecipes/FoodsRecipes";
 import WelcomePage from "../src/pages/WelcomePage/WelcomePage";
+import CreateRecipe from "../src/pages/CreateRecipe/CreateRecipe"
 
 const App = () => {
   const [recipes, setRecipes] = useState([]);
@@ -22,11 +23,9 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<WelcomePage />} />
-        </Routes>
-
-        <Routes>
           <Route path="/recipes" element={<Foods />} />
           <Route path="/recipe/edit/:id" element={<FoodsRecipes recipes={recipes}/>} />
+          <Route path="/recipe/create" element={<CreateRecipe />} />
         </Routes>
       </Router>
     </>
