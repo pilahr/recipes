@@ -40,7 +40,7 @@ const Foods = () => {
         />
       </div>
       <div>
-        <FoodCardList recipes={recipes} recipesArr={searchRecipe} />
+        <FoodCardList recipes={searchRecipe} />
       </div>
     </div>
   );

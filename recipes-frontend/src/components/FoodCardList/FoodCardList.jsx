@@ -3,10 +3,12 @@ import "./FoodCardList.scss";
 import FoodCard from "../FoodCard/FoodCard";
 import { Link } from "react-router-dom";
 
-const FoodCardList = ({ recipesArr }) => {
+const FoodCardList = ({ recipes }) => {
+
   return (
     <div className="foodcard-list">
-      {recipesArr.map((recipe, index) => (
+
+      {recipes.map((recipe, index) => (
         <Link key={recipe.id} to={`/recipe/edit/${recipe.id}`}>
           <FoodCard key={index} recipe={recipe} />
         </Link>
