@@ -4,6 +4,7 @@ import FoodRecipe from "../../components/FoodRecipe/FoodRecipe";
 import { useNavigate, useParams } from "react-router-dom";
 import Heading from "../../components/Heading/Heading";
 import Button from "../../components/Buttons/Button/Button";
+import Form from "../../components/Form/Form";
 
 const FoodsRecipes = () => {
   const { id } = useParams();
@@ -59,7 +60,6 @@ const FoodsRecipes = () => {
 
   const handleShowForm = () => setShowForm(!showForm);
 
-
   return (
     <div className="foods-recipes">
       <div>
@@ -67,16 +67,17 @@ const FoodsRecipes = () => {
       </div>
       <div className="foods-recipes__main">
         <div className="foods-recipes__main--desktop-button">
-          <Button buttonText="Update" func="update" onClick={handleShowForm}/>
-          <Button buttonText="Delete" func="delete" onClick={handleDelete}/>
+          <Button buttonText="Update" func="update" onClick={handleShowForm} />
+          <Button buttonText="Delete" func="delete" onClick={handleDelete} />
         </div>
 
         <FoodRecipe recipe={recipe} />
         <div className="foods-recipes__main--button">
-          <Button buttonText="Update" func="update" onClick={handleShowForm}/>
-          <Button buttonText="Delete" func="delete" onClick={handleDelete}/>
+          <Button buttonText="Update" func="update" onClick={handleShowForm} />
+          <Button buttonText="Delete" func="delete" onClick={handleDelete} />
         </div>
       </div>
+      <Form title="Update Recipe" defaultFormState={recipe} />
     </div>
   );
 };
