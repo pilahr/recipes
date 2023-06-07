@@ -3,11 +3,13 @@ import "./FoodsRecipes.scss";
 import FoodRecipe from "../../components/FoodRecipe/FoodRecipe";
 import { useNavigate, useParams } from "react-router-dom";
 import Heading from "../../components/Heading/Heading";
+import Button from "../../components/Buttons/Button/Button";
 
 const FoodsRecipes = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [recipe, setRecipe] = useState([]);
+  const [showForm, setShowForm] = useState(false);
 
   const getRecipeById = async (id) => {
     const url = `http://localhost:8080/recipe/${id}`;
@@ -55,13 +57,25 @@ const FoodsRecipes = () => {
     }
   };
 
+  const handleShowForm = () => setShowForm(!showForm);
+
+
   return (
-    <div>
+    <div className="foods-recipes">
       <div>
         <Heading />
       </div>
-      <div>
+      <div className="foods-recipes__main">
+        <div className="foods-recipes__main--desktop-button">
+          <Button buttonText="Update" func="update" onClick={handleShowForm}/>
+          <Button buttonText="Delete" func="delete" onClick={handleDelete}/>
+        </div>
+
         <FoodRecipe recipe={recipe} />
+        <div className="foods-recipes__main--button">
+          <Button buttonText="Update" func="update" onClick={handleShowForm}/>
+          <Button buttonText="Delete" func="delete" onClick={handleDelete}/>
+        </div>
       </div>
     </div>
   );
