@@ -24,7 +24,6 @@ const FoodsRecipes = () => {
     getRecipeById(id);
   }, []);
 
-  console.log(recipe);
   const handleUpdate = async (updatedRecipe) => {
     const result = await fetch(`http://localhost:8080/recipe/${id}`, {
       method: "PUT",
