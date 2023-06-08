@@ -12,4 +12,6 @@ import java.util.List;
 @Table(name = "vegans")
 @Repository
 public interface VeganRepository extends JpaRepository<Vegan, Long> {
+
+
 }

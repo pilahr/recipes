@@ -5,6 +5,7 @@ import org.springframework.context.annotation.EnableMBeanExport;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "recipes")
 public class Recipes {
 
     @Id
@@ -15,10 +16,6 @@ public class Recipes {
     private double price;
     private String ingredients;
     private String method;
-//    private double rating;
-//    private String level;
-//    private boolean isVegan;
-
     private String imageUrl;
 
     @Column(name = "rating_id")
@@ -46,16 +43,13 @@ public class Recipes {
 
     }
 
-    public Recipes(long id, String foodName, String nationality, double price, String ingredients, String method, double rating, String level, boolean isVegan, String imageUrl) {
+    public Recipes(long id, String foodName, String nationality, double price, String ingredients, String method, String imageUrl) {
         this.id = id;
         this.foodName = foodName;
         this.nationality = nationality;
         this.price = price;
         this.ingredients = ingredients;
         this.method = method;
-//        this.rating = rating;
-//        this.level = level;
-//        this.isVegan = isVegan;
         this.imageUrl = imageUrl;
     }
 
@@ -106,30 +100,6 @@ public class Recipes {
     public void setMethod(String method) {
         this.method = method;
     }
-
-//    public double getRating() {
-//        return rating;
-//    }
-//
-//    public void setRating(double rating) {
-//        this.rating = rating;
-//    }
-//
-//    public String getLevel() {
-//        return level;
-//    }
-//
-//    public void setLevel(String level) {
-//        this.level = level;
-//    }
-//
-//    public boolean isVegan() {
-//        return isVegan;
-//    }
-//
-//    public void setVegan(boolean vegan) {
-//        isVegan = vegan;
-//    }
 
     public String getImageUrl() {
         return imageUrl;

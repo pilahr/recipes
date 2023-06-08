@@ -94,6 +94,12 @@ public class RecipesService {
         return recipesRepository.getVeganRecipes();
     }
 
+    public Object getVeganOption() {
+        return recipesRepository.getVeganOption();
+    }
+//    public Object getRecipeLevel() {
+//        recipesRepository.
+//    }
     // UPDATE
     @Modifying
     public Recipes updateRecipe(Recipes newRecipe, long id) {
@@ -128,6 +134,7 @@ public class RecipesService {
         }
         recipesRepository.deleteRecipeById(id);
     }
+
 
 
 }

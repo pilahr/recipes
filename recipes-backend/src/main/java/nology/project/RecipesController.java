@@ -16,18 +16,25 @@ public class RecipesController {
     RecipesService recipesService;
 
     @ExceptionHandler
-    public String handleExceptions(RecipesNotFoundException exception) {
-        return exception.getMessage();
+    public ResponseEntity<String> handleExceptions(NotFoundException exception) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
     }
 
     // CREATE
     @PostMapping("/recipe")
     public ResponseEntity<Recipes> createRecipe(@RequestBody Recipes recipe) {
-        recipesService.addRecipe(recipe);
-        return ResponseEntity.status(HttpStatus.CREATED).body(recipe);
+        Recipes newRecipe = recipesService.addRecipe(recipe);
+        return ResponseEntity.status(HttpStatus.CREATED).body(newRecipe);
     }
 
     // READ
+    @GetMapping("/recipes")
+    public ResponseEntity<List<Recipes>> getRecipes(@RequestParam(required = false) String nationality, @RequestParam(defaultValue = "20") int limit) {
+        if (nationality != null) {
+            return ResponseEntity.status(HttpStatus.OK).body(recipesService.getRecipesByNationality(nationality, limit));
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(recipesService.getAllRecipes(limit));
+    }
     @GetMapping("/recipes/ids")
     public ResponseEntity<List<Long>> getRecipesIds() {
         return ResponseEntity.status(HttpStatus.OK).body(recipesService.getRecipesIds());
@@ -41,14 +48,6 @@ public class RecipesController {
     @GetMapping("/recipes/vegans")
     public ResponseEntity<List<Recipes>> getVeganRecipes() {
         return ResponseEntity.status(HttpStatus.OK).body(recipesService.getVeganRecipes());
-    }
-
-    @GetMapping("/recipes")
-    public ResponseEntity<List<Recipes>> getRecipes(@RequestParam(required = false) String nationality, @RequestParam(defaultValue = "20") int limit) {
-        if (nationality != null) {
-            return ResponseEntity.status(HttpStatus.OK).body(recipesService.getRecipesByNationality(nationality, limit));
-        }
-        return ResponseEntity.status(HttpStatus.OK).body(recipesService.getAllRecipes(limit));
     }
 
     @GetMapping("/recipe/random")
@@ -65,13 +64,13 @@ public class RecipesController {
     @PutMapping("/recipe/{id}")
     public ResponseEntity<Recipes> updateRecipe(@RequestBody Recipes newRecipe, @PathVariable long id) {
         newRecipe.setId(id);
-        recipesService.updateRecipe(newRecipe, id);
-        return ResponseEntity.status(HttpStatus.OK).body(newRecipe);
+        Recipes updatedRecipe = recipesService.updateRecipe(newRecipe, id);
+        return ResponseEntity.status(HttpStatus.OK).body(updatedRecipe);
     }
 
     // Delete
     @DeleteMapping("/recipe/{id}")
-    public ResponseEntity<String> deleteRecipeById(@PathVariable long id) {
+    public ResponseEntity<Void> deleteRecipeById(@PathVariable long id) {
         recipesService.deleteRecipeById(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
