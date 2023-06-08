@@ -8,9 +8,7 @@ import nology.project.repositories.LevelRepository;
 import nology.project.repositories.RatingRepository;
 import nology.project.repositories.RecipesRepository;
 import nology.project.repositories.VeganRepository;
-import nology.project.responses.Option;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 
@@ -60,15 +58,11 @@ public class RecipesService {
     }
 
     public Recipes getRecipeById(long id) {
-        Optional<Recipes> recipe = recipesRepository.findById(id);
-        if (recipe.isEmpty()) {
-            throw new RecipesNotFoundException();
-        }
-        return recipe.get();
+        return recipesRepository.findById(id).orElseThrow(() -> new NotFoundException("Recipe Not Found"));
     }
 
     public List<Recipes> getAllRecipes(int limit) {
-        return recipesRepository.findAll()
+        return recipesRepository.getAllByOrderByFoodNameAsc()
                 .stream()
                 .limit(limit)
                 .collect(Collectors.toList());
@@ -94,12 +88,6 @@ public class RecipesService {
         return recipesRepository.getVeganRecipes();
     }
 
-    public Object getVeganOption() {
-        return recipesRepository.getVeganOption();
-    }
-//    public Object getRecipeLevel() {
-//        recipesRepository.
-//    }
     // UPDATE
     @Modifying
     public Recipes updateRecipe(Recipes newRecipe, long id) {
@@ -130,11 +118,8 @@ public class RecipesService {
     @Transactional
     public void deleteRecipeById(long id) {
         if (!recipesRepository.existsById(id)) {
-            throw new RecipesNotFoundException();
+            throw new NotFoundException("Recipe Not Found");
         }
         recipesRepository.deleteRecipeById(id);
     }
-
-
-
 }

@@ -10,6 +10,7 @@ import java.util.List;
 @Repository
 public interface RecipesRepository extends JpaRepository<Recipes, Long> {
 
+    List<Recipes> getAllByOrderByFoodNameAsc();
     void deleteRecipeById(long id);
 
     List<Recipes> getAllRecipesByNationality(String nationality);
