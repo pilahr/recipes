@@ -1,0 +1,26 @@
+@use "../../styles/main" as *;
+@use "../../styles/variables" as *;
+
+.footer {
+  height: 80px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+  background-color: $color-gray;
+  bottom: 10%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+
+  &__text {
+    color: $text-white;
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+    .footer {
+        height: 150px;
+    }
+}

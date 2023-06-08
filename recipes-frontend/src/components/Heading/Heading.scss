@@ -8,6 +8,9 @@
   display: flex;
   box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
   border-radius: 15px;
+  position: fixed;
+  top: 0;
+  background-color: white;
 
   &__img-home {
     height: 3.5rem;

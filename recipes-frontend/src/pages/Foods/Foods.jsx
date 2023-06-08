@@ -3,6 +3,7 @@ import "./Foods.scss";
 import Heading from "../../components/Heading/Heading";
 import Searchbox from "../../components/Searchbox/Searchbox";
 import FoodCardList from "../../components/FoodCardList/FoodCardList";
+import Footer from "../../components/Footer/Footer";
 
 const Foods = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -28,11 +29,11 @@ const Foods = () => {
   });
 
   return (
-    <div>
+    <div className="food-page">
       <div>
         <Heading />
       </div>
-      <div>
+      <div className="food-page__searchbox">
         <Searchbox
           searchTerm={searchTerm}
           handleSearchInput={handleSearchInput}
@@ -41,6 +42,9 @@ const Foods = () => {
       </div>
       <div>
         <FoodCardList recipes={searchRecipe} />
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

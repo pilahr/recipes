@@ -10,9 +10,20 @@
     width: 100%;
   }
 
+  &__footer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 0;
+  }
+
   .welcome {
     padding: 30px;
 
+    &__top {
+      margin: 10px;
+    }
     &__text {
       padding-left: 15px;
       padding-top: 15px;

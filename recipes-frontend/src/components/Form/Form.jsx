@@ -98,7 +98,6 @@ const Form = ({
         <label className="form-container__form--label">Level</label>
         <div>
           <Select
-            className="create-form-container__form--select"
             options={levels}
             onChange={(event) =>
               setRecipe({ ...recipe, levelId: event.target.value })
@@ -110,7 +109,6 @@ const Form = ({
         
         <label className="form-container__form--label">Vegan</label>
         <Select
-          className="create-form-container__form--select"
           options={vegans}
           onChange={(event) =>
             setRecipe({ ...recipe, veganId: event.target.value })

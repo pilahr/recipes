@@ -3,6 +3,7 @@
 
 .foods-recipes {
   &__main {
+    margin-top: 100px;
     &--desktop-button {
       display: none;
     }
@@ -11,13 +12,12 @@
       justify-content: center;
     }
   }
-
-
 }
 
 @media screen and (min-width: $desktop-breakpoint) {
   .foods-recipes {
     &__main {
+      margin-top: 150px;
       &--desktop-button {
         display: flex;
         padding: 20px;
