@@ -7,7 +7,7 @@ import Button from "../../components/Buttons/Button/Button";
 import Form from "../../components/Form/Form";
 import Spinner from "../../components/Spinner/Spinner";
 
-const FoodsRecipes = () => {
+const FoodsRecipes = ({ vegans, levels }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [recipe, setRecipe] = useState(null);
@@ -25,6 +25,16 @@ const FoodsRecipes = () => {
   }, []);
 
   const handleUpdate = async (updatedRecipe) => {
+    // const {
+    //   foodName,
+    //   imageUrl,
+    //   ingredients,
+    //   method,
+    //   nationality,
+    //   veganId,
+    //   levelId,
+    // } = updatedRecipe;
+
     const result = await fetch(`http://localhost:8080/recipe/${id}`, {
       method: "PUT",
       headers: {
@@ -35,7 +45,9 @@ const FoodsRecipes = () => {
 
     if (result.ok) {
       alert("Recipe updated");
-      setRecipe(updatedRecipe);
+      const updated = await result.json();
+      setRecipe(updated);
+      handleShowForm();
     } else {
       const message = await result.text();
       alert(message);
@@ -88,9 +100,11 @@ const FoodsRecipes = () => {
         <div className="food-recipes__form">
           <Form
             title="Update Recipe"
-            recipeById={recipe}
-            handleSubmit={handleUpdate}
+            handleUpdate={handleUpdate}
             handleShowForm={handleShowForm}
+            defaultFormState={recipe}
+            levels={levels}
+            vegans={vegans}
           />
         </div>
       )}
