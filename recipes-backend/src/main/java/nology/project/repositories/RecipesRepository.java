@@ -1,6 +1,7 @@
 package nology.project.repositories;
 
 import nology.project.models.Recipes;
+import nology.project.models.Vegan;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -27,5 +28,7 @@ public interface RecipesRepository extends JpaRepository<Recipes, Long> {
 
     @Query(value = "SELECT * FROM recipes INNER JOIN vegans ON recipes.vegan_id = vegans.id WHERE is_vegan = true", nativeQuery = true)
     List<Recipes> getVeganRecipes();
+
+//    List<Recipes> getAllVegansNames();
 
 }

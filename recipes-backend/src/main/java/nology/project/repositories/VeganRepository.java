@@ -12,6 +12,7 @@ import java.util.List;
 @Table(name = "vegans")
 @Repository
 public interface VeganRepository extends JpaRepository<Vegan, Long> {
-
+    @Query(value = "SELECT * FROM vegans", nativeQuery = true)
+    List<Vegan> getVeganOptions();
 
 }
