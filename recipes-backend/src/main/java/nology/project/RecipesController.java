@@ -1,6 +1,8 @@
 package nology.project;
 
+import nology.project.models.Level;
 import nology.project.models.Recipes;
+import nology.project.models.Vegan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -45,6 +47,17 @@ public class RecipesController {
         return ResponseEntity.status(HttpStatus.OK).body(recipesService.getNationalities());
     }
 
+    @GetMapping("/recipes/vegan-options")
+    public ResponseEntity<List<Vegan>> getVeganOptions() {
+        System.out.println(recipesService.getVeganOptions());
+        return ResponseEntity.status(HttpStatus.OK).body(recipesService.getVeganOptions());
+    }
+
+    @GetMapping("/recipes/level-options")
+    public ResponseEntity<List<Level>> getLevelOptions() {
+        System.out.println(recipesService.getLevelOptions());
+        return ResponseEntity.status(HttpStatus.OK).body(recipesService.getLevelOptions());
+    }
     @GetMapping("/recipes/vegans")
     public ResponseEntity<List<Recipes>> getVeganRecipes() {
         return ResponseEntity.status(HttpStatus.OK).body(recipesService.getVeganRecipes());

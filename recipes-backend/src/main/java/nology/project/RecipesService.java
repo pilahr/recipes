@@ -88,6 +88,13 @@ public class RecipesService {
         return recipesRepository.getVeganRecipes();
     }
 
+    public List<Vegan> getVeganOptions() {
+        return veganRepository.getVeganOptions();
+    }
+    public List<Level> getLevelOptions() {
+        return levelRepository.getLevelOptions();
+    }
+
     // UPDATE
     @Modifying
     public Recipes updateRecipe(Recipes newRecipe, long id) {
@@ -122,4 +129,6 @@ public class RecipesService {
         }
         recipesRepository.deleteRecipeById(id);
     }
+
+
 }
