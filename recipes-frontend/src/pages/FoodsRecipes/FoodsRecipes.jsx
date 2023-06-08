@@ -91,6 +91,7 @@ const FoodsRecipes = () => {
             title="Update Recipe"
             recipeById={recipe}
             handleSubmit={handleUpdate}
+            handleShowForm={handleShowForm}
           />
         </div>
       )}

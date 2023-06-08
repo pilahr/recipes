@@ -16,6 +16,12 @@
   opacity: 1;
   transition: opacity 2s ease-in-out;
 
+  &__cross {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+  }
+
   &__title {
     text-align: center;
   }
@@ -43,6 +49,11 @@
       padding-left: 5px;
       margin-top: 3px;
       font-family: "Roboto";
+    }
+
+    &--button {
+      display: flex;
+      justify-content: flex-end;
     }
   }
 }

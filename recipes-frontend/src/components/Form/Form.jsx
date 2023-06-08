@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./Form.scss";
 import Button from "../Buttons/Button/Button";
+import Cross from "../../assets/images/cross.png";
 
-const Form = ({ title, handleSubmit, recipeById }) => {
+const Form = ({ title, handleSubmit, recipeById, handleShowForm }) => {
   const { foodName, imageUrl, ingredients, method, nationality, vegan, level } =
     recipeById;
 
@@ -19,6 +20,9 @@ const Form = ({ title, handleSubmit, recipeById }) => {
   };
   return (
     <div className="form-container">
+      <div className="form-container__cross">
+        <img src={Cross} alt="cross image" onClick={handleShowForm} />
+      </div>
       <h2 className="form-container__title">{title}</h2>
       <form className="form-container__form" onSubmit={handleValidation}>
         <label className="form-container__form--label">Recipe Name</label>
@@ -64,11 +68,9 @@ const Form = ({ title, handleSubmit, recipeById }) => {
           <option>Vegan</option>
           <option>Not Vegan</option>
         </select>
-        <Button
-          buttonText="Submit"
-          func="update"
-          className="form-container__form--button"
-        />
+        <div className="form-container__form--button">
+          <Button buttonText="Submit" func="update" onClick={handleSubmit} />
+        </div>
       </form>
     </div>
   );
