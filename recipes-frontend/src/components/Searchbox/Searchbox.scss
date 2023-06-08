@@ -2,6 +2,7 @@
 @use "../../styles/variables" as *;
 
 .search {
+  margin-left: 10px;
   .searchbox {
     height: 100px;
     padding: 20px;
@@ -28,5 +29,17 @@
         right: 0;
       }
     }
+  }
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  .search {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .search {
+    margin-left: 50px;
   }
 }
