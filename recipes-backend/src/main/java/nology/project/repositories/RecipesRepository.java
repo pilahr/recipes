@@ -11,6 +11,7 @@ import java.util.List;
 public interface RecipesRepository extends JpaRepository<Recipes, Long> {
 
     List<Recipes> getAllByOrderByFoodNameAsc();
+
     void deleteRecipeById(long id);
 
     List<Recipes> getAllRecipesByNationality(String nationality);
@@ -27,6 +28,4 @@ public interface RecipesRepository extends JpaRepository<Recipes, Long> {
     @Query(value = "SELECT * FROM recipes INNER JOIN vegans ON recipes.vegan_id = vegans.id WHERE is_vegan = true", nativeQuery = true)
     List<Recipes> getVeganRecipes();
 
-    @Query(value = "SELECT DISTINCT name FROM vegans;", nativeQuery = true)
-    Object getVeganOption();
 }
