@@ -1,0 +1,12 @@
+@use "../../styles/main" as *;
+@use "../../styles/variables" as *;
+
+.select-option {
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid $color-gray;
+  padding-left: 5px;
+  margin-top: 3px;
+  font-family: "Roboto";
+}
