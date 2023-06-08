@@ -6,16 +6,24 @@ import WelcomePage from "../src/pages/WelcomePage/WelcomePage";
 import CreateRecipe from "../src/pages/CreateRecipe/CreateRecipe";
 
 const App = () => {
-  const [recipes, setRecipes] = useState([]);
+  const [vegans, setVegans] = useState([]);
+  const [levels, setLevels] = useState([]);
 
-  const getRecipes = async () => {
-    const response = await fetch("http://localhost:8080/recipes/");
+  const getVegans = async () => {
+    const response = await fetch("http://localhost:8080/recipes/vegan-options");
     const recipeData = await response.json();
-    setRecipes(recipeData);
+    setVegans(recipeData);
+  };
+
+  const getLevels = async () => {
+    const response = await fetch("http://localhost:8080/recipes/level-options");
+    const recipeData = await response.json();
+    setLevels(recipeData);
   };
 
   useEffect(() => {
-    getRecipes();
+    getLevels();
+    getVegans();
   }, []);
 
   return (
@@ -24,8 +32,14 @@ const App = () => {
         <Routes>
           <Route path="/" element={<WelcomePage />} />
           <Route path="/recipes" element={<Foods />} />
-          <Route path="/recipe/edit/:id" element={<FoodsRecipes />} />
-          <Route path="/recipe/create" element={<CreateRecipe />} />
+          <Route
+            path="/recipe/edit/:id"
+            element={<FoodsRecipes vegans={vegans} levels={levels} />}
+          />
+          <Route
+            path="/recipe/create"
+            element={<CreateRecipe vegans={vegans} levels={levels} />}
+          />
         </Routes>
       </Router>
     </>
