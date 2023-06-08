@@ -7,6 +7,7 @@ const FoodRecipe = ({ recipe }) => {
     ingredients,
     method,
     imageUrl,
+    nationality,
     level: { name },
     vegan,
   } = recipe;
@@ -26,6 +27,8 @@ const FoodRecipe = ({ recipe }) => {
         <h3 className="food-recipe__content--heading">{foodName}</h3>
         <p className="food-recipe__content--level">Difficulty: {name}</p>
         <p className="food-recipe__content--vegan">{vegan.name}</p>
+        <h4 className="food-recipe__content--head">Nationality</h4>
+        <p className="food-recipe__content--text">{nationality}</p>
         <h4 className="food-recipe__content--head">Ingredients</h4>
         <p className="food-recipe__content--text">{ingredients}</p>
         <h4 className="food-recipe__content--head">Method</h4>
