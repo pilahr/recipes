@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Foods from "../src/pages/Foods/Foods";
 import FoodsRecipes from "../src/pages/FoodsRecipes/FoodsRecipes";
 import WelcomePage from "../src/pages/WelcomePage/WelcomePage";
-import CreateRecipe from "../src/pages/CreateRecipe/CreateRecipe"
+import CreateRecipe from "../src/pages/CreateRecipe/CreateRecipe";
 
 const App = () => {
   const [recipes, setRecipes] = useState([]);
