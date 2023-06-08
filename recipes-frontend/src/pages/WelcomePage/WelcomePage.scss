@@ -8,6 +8,7 @@
 
   &__heading {
     width: 100%;
+    margin-top: 100px;
   }
 
   &__footer {
@@ -31,9 +32,15 @@
     }
   }
 }
+.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 @media screen and (min-width: $tablet-breakpoint) {
   .welcome {
+    margin-top: 20px;
     padding-left: 100px;
 
     &__text {
@@ -45,8 +52,5 @@
 
 @media screen and (min-width: $desktop-breakpoint) {
   .welcome {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
 }
