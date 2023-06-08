@@ -20,7 +20,9 @@ const Button = ({ func, buttonText, onClick }) => {
 
   return (
     <div>
-      <button className={buttonStyle}>{buttonText}</button>
+      <button className={buttonStyle} onClick={onClick}>
+        {buttonText}
+      </button>
     </div>
   );
 };

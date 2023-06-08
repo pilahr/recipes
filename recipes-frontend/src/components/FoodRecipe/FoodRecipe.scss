@@ -22,6 +22,7 @@
       height: 2rem;
       margin-top: 10px;
     }
+
     &--level {
       color: $text-gray;
       background-color: $color-blue-green;
@@ -29,6 +30,16 @@
       border-radius: 10px;
       padding: 10px;
     }
+
+    &--vegan {
+      color: $text-gray;
+      background-color: $color-gray;
+      max-width: fit-content;
+      border-radius: 10px;
+      padding: 10px;
+      margin-left: 5px;
+    }
+
     &--text {
       color: $text-gray;
     }
@@ -63,13 +74,13 @@
 @media screen and (min-width: $large-desktop-breakpoint) {
   .food-recipe {
     &__image {
-        &--food {
-            width: 600px;
-            height: 400px;
-        }
+      &--food {
+        width: 600px;
+        height: 400px;
+      }
     }
     &__content {
-        width: 50%;
+      width: 50%;
     }
   }
 }

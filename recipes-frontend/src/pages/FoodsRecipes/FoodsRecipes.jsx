@@ -5,12 +5,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import Heading from "../../components/Heading/Heading";
 import Button from "../../components/Buttons/Button/Button";
 import Form from "../../components/Form/Form";
+import Spinner from "../../components/Spinner/Spinner";
 
-const FoodsRecipes = ({ recipes }) => {
- 
+const FoodsRecipes = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [recipe, setRecipe] = useState([]);
+  const [recipe, setRecipe] = useState(null);
   const [showForm, setShowForm] = useState(false);
 
   const getRecipeById = async (id) => {
@@ -22,8 +22,9 @@ const FoodsRecipes = ({ recipes }) => {
 
   useEffect(() => {
     getRecipeById(id);
-  }, [id]);
+  }, []);
 
+  console.log(recipe);
   const handleUpdate = async (updatedRecipe) => {
     const result = await fetch(`http://localhost:8080/recipe/${id}`, {
       method: "PUT",
@@ -63,6 +64,9 @@ const FoodsRecipes = ({ recipes }) => {
     setShowForm(!showForm);
   };
 
+  const isLoading = !recipe;
+  if (isLoading) return <Spinner />;
+
   return (
     <div className="foods-recipes">
       <div>
@@ -80,14 +84,16 @@ const FoodsRecipes = ({ recipes }) => {
           <Button buttonText="Delete" func="delete" onClick={handleDelete} />
         </div>
       </div>
-      <div className="food-recipes__form">
-        <Form
-          title="Update Recipe"
-          recipeById={recipe}
-          handleSubmit={handleUpdate}
-        
-        />
-      </div>
+
+      {showForm && (
+        <div className="food-recipes__form">
+          <Form
+            title="Update Recipe"
+            recipeById={recipe}
+            handleSubmit={handleUpdate}
+          />
+        </div>
+      )}
     </div>
   );
 };
