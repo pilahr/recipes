@@ -13,7 +13,6 @@ public class Level implements OptionContract {
     private long id;
     private String name;//easy, medium, difficult
 
-//    @Override
     public long getId() {
         return id;
     }

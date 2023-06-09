@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -36,10 +35,16 @@ public class RecipesService {
                 .orElseThrow(() -> new NotFoundException("Level of difficulty Not Found"));
 
         Rating rating = ratingRepository.findById(recipe.getRatingId())
-                .orElseThrow(() -> new NotFoundException("Rating Not Found"));
+                .orElse(null);
 
         Vegan vegan = veganRepository.findById(recipe.getVeganId())
                 .orElseThrow(() -> new NotFoundException("Vegan recipe Not Found"));
+
+        if (rating == null) {
+            Rating newRating = new Rating();
+            newRating.setFoodId(recipe.getId());
+            newRating.setRating(recipe.getRating().getRating());
+        }
 
         Recipes newRecipe = recipesRepository.save(recipe);
 

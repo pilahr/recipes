@@ -14,7 +14,6 @@ public class Rating {
     private double rating;
     private long foodId;
 
-//    @Override
     public long getId() {
         return id;
     }

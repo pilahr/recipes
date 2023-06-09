@@ -13,8 +13,6 @@ public class Vegan implements OptionContract {
     private long id;
     private String name;//vegan, not vegan
     private boolean isVegan;//true, false
-
-//    @Override
     public long getId() {
         return id;
     }
