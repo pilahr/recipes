@@ -15,13 +15,6 @@ const CreateForm = ({
   const handleValidation = (event) => {
     event.preventDefault();
 
-    console.log(recipe);
-
-    // if (Object.values(recipe).some((value) => !value)) {
-    //   alert("Missing content, unable to proceed");
-    //   return;
-    // }
-
     handleSubmit(recipe);
   };
   return (
