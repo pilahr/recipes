@@ -15,10 +15,12 @@ const CreateForm = ({
   const handleValidation = (event) => {
     event.preventDefault();
 
-    if (Object.values(recipe).some((value) => !value)) {
-      alert("Missing content, unable to proceed");
-      return;
-    }
+    console.log(recipe);
+
+    // if (Object.values(recipe).some((value) => !value)) {
+    //   alert("Missing content, unable to proceed");
+    //   return;
+    // }
 
     handleSubmit(recipe);
   };
@@ -109,6 +111,18 @@ const CreateForm = ({
           }
           defaultOption={"Is it vegan?"}
           defaultValue={recipe.veganId}
+        />
+
+        <label className="create-form-container__form--label">Rating</label>
+        <input
+          className="create-form-container__form--input"
+          placeholder="Please give the rating for this recipe"
+          id="ratingId"
+          type="number"
+          value={recipe.rating}
+          onInput={(event) =>
+            setRecipe({ ...recipe, ratingId: event.target.value })
+          }
         />
 
         <div className="create-form-container__form--button">

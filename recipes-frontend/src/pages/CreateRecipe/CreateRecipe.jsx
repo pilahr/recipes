@@ -8,6 +8,7 @@ const CreateRecipe = ({ vegans, levels }) => {
   const navigate = useNavigate();
 
   const handleSubmit = async (recipe) => {
+    // console.log(recipe);
     const result = await fetch("http://localhost:8080/recipe", {
       method: "POST",
       headers: {
@@ -15,7 +16,6 @@ const CreateRecipe = ({ vegans, levels }) => {
       },
       body: JSON.stringify(recipe),
     });
-
 
     if (result.ok) {
       alert("Recipe added");
@@ -33,8 +33,6 @@ const CreateRecipe = ({ vegans, levels }) => {
     method: "",
     nationality: "",
     imageUrl: "",
-    level: "",
-    vegan: "",
   };
 
   return (
@@ -43,7 +41,7 @@ const CreateRecipe = ({ vegans, levels }) => {
       <div className="create-recipe-page__form">
         <></>
         <CreateForm
-          title="Create the Recipe"
+          title="Add A New Recipe"
           handleSubmit={handleSubmit}
           defaultFormState={defaultFormState}
           vegans={vegans}

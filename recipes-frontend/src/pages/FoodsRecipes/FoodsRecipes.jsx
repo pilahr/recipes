@@ -25,16 +25,7 @@ const FoodsRecipes = ({ vegans, levels }) => {
   }, []);
 
   const handleUpdate = async (updatedRecipe) => {
-    // const {
-    //   foodName,
-    //   imageUrl,
-    //   ingredients,
-    //   method,
-    //   nationality,
-    //   veganId,
-    //   levelId,
-    // } = updatedRecipe;
-
+    console.log(updatedRecipe);
     const result = await fetch(`http://localhost:8080/recipe/${id}`, {
       method: "PUT",
       headers: {

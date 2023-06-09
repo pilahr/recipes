@@ -12,9 +12,6 @@ const Form = ({
   levels,
   defaultFormState,
 }) => {
-  const { foodName, imageUrl, ingredients, method, nationality, vegan, level } =
-    defaultFormState;
-
   const [recipe, setRecipe] = useState(defaultFormState);
 
   const handleValidation = (event) => {
@@ -34,12 +31,11 @@ const Form = ({
       <h2 className="form-container__title">{title}</h2>
 
       <form className="form-container__form" onSubmit={handleValidation}>
-
         <label className="form-container__form--label">Recipe Name</label>
         <input
           className="form-container__form--input"
           placeholder="Name of the recipe"
-          value={foodName}
+          value={recipe.foodName}
           id="recipe"
           type="text"
           onInput={(event) =>
@@ -51,7 +47,7 @@ const Form = ({
         <input
           className="form-container__form--input"
           placeholder="Ingredients for the recipe"
-          value={ingredients}
+          value={recipe.ingredients}
           id="ingredients"
           type="text"
           onInput={(event) =>
@@ -63,7 +59,7 @@ const Form = ({
         <input
           className="form-container__form--input"
           placeholder="Recipe method"
-          value={method}
+          value={recipe.method}
           id="method"
           type="text"
           onInput={(event) =>
@@ -75,7 +71,7 @@ const Form = ({
         <input
           className="form-container__form--input"
           placeholder="Recipe nationality"
-          value={nationality}
+          value={recipe.nationality}
           id="nationality"
           type="text"
           onInput={(event) =>
@@ -87,7 +83,7 @@ const Form = ({
         <input
           className="form-container__form--input"
           placeholder="http://www.imageexample.jpeg"
-          value={imageUrl}
+          value={recipe.imageUrl}
           id="imageUrl"
           type="text"
           onInput={(event) =>
@@ -106,7 +102,7 @@ const Form = ({
             defaultValue={recipe.levelId}
           />
         </div>
-        
+
         <label className="form-container__form--label">Vegan</label>
         <Select
           options={vegans}
