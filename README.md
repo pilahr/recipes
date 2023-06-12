@@ -5,6 +5,7 @@ Overview
 The project aims to be a full stack project. To consolidate the topics that have been covered in the course.
 
 This project's front-end is in React.
-  With mobile-first design
+  - With mobile-first design
+  
 A back-end created with Java, Spring and Spring Boot framework
-  Connected to MySQL database
+  - Connected to MySQL database
