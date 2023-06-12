@@ -9,3 +9,9 @@ This project's front-end is in React.
   
 A back-end created with Java, Spring and Spring Boot framework
   - Connected to MySQL database
+
+Features:
+- View and search for my favourite recipes
+- View details of individual recipe
+- Update/ delete individual recipe
+- Create a new recipe
