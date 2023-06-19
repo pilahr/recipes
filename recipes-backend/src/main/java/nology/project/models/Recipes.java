@@ -18,12 +18,14 @@ public class Recipes {
     private String method;
     private String imageUrl;
 
-    @Column(name = "rating_id")
-    private long ratingId;
+    private double rating;
 
-    @OneToOne
-    @JoinColumn(name = "rating_id", insertable = false, updatable = false)
-    private Rating rating;
+//    @Column(name = "rating_id")
+//    private long ratingId;
+//
+//    @OneToOne
+//    @JoinColumn(name = "rating_id", insertable = false, updatable = false)
+//    private Rating rating;
 
     @Column(name = "vegan_id")
     private long veganId;
@@ -43,7 +45,7 @@ public class Recipes {
 
     }
 
-    public Recipes(long id, String foodName, String nationality, double price, String ingredients, String method, String imageUrl) {
+    public Recipes(long id, String foodName, String nationality, double price, String ingredients, String method, String imageUrl, double rating) {
         this.id = id;
         this.foodName = foodName;
         this.nationality = nationality;
@@ -51,7 +53,9 @@ public class Recipes {
         this.ingredients = ingredients;
         this.method = method;
         this.imageUrl = imageUrl;
+        this.rating = rating;
     }
+
 
     public long getId() {
         return id;
@@ -109,21 +113,29 @@ public class Recipes {
         this.imageUrl = imageUrl;
     }
 
-    public long getRatingId() {
-        return ratingId;
-    }
-
-    public void setRatingId(long ratingId) {
-        this.ratingId = ratingId;
-    }
-
-    public Rating getRating() {
+    public double getRating() {
         return rating;
     }
 
-    public void setRating(Rating rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
+
+    //    public long getRatingId() {
+//        return ratingId;
+//    }
+//
+//    public void setRatingId(long ratingId) {
+//        this.ratingId = ratingId;
+//    }
+//
+//    public Rating getRating() {
+//        return rating;
+//    }
+//
+//    public void setRating(Rating rating) {
+//        this.rating = rating;
+//    }
 
     public long getVeganId() {
         return veganId;
@@ -157,6 +169,26 @@ public class Recipes {
         this.level = level;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Recipes{" +
+//                "id=" + id +
+//                ", foodName='" + foodName + '\'' +
+//                ", nationality='" + nationality + '\'' +
+//                ", price=" + price +
+//                ", ingredients='" + ingredients + '\'' +
+//                ", method='" + method + '\'' +
+//                ", imageUrl='" + imageUrl + '\'' +
+//                ", ratingId=" + ratingId +
+//                ", rating=" + rating +
+//                ", veganId=" + veganId +
+//                ", vegan=" + vegan +
+//                ", levelId=" + levelId +
+//                ", level=" + level +
+//                '}';
+//    }
+
+
     @Override
     public String toString() {
         return "Recipes{" +
@@ -167,7 +199,6 @@ public class Recipes {
                 ", ingredients='" + ingredients + '\'' +
                 ", method='" + method + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
-                ", ratingId=" + ratingId +
                 ", rating=" + rating +
                 ", veganId=" + veganId +
                 ", vegan=" + vegan +
