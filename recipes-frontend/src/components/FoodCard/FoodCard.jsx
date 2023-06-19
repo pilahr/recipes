@@ -8,8 +8,9 @@ const FoodCard = ({ recipe }) => {
     nationality,
     price,
     imageUrl,
+    rating,
     level: { name },
-    rating: { rating },
+    // rating: { rating },
   } = recipe;
 
   return (

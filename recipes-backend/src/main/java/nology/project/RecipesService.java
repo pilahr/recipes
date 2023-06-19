@@ -34,24 +34,24 @@ public class RecipesService {
         Level level = levelRepository.findById(recipe.getLevelId())
                 .orElseThrow(() -> new NotFoundException("Level of difficulty Not Found"));
 
-        Rating rating = ratingRepository.findById(recipe.getRatingId())
-                .orElse(null);
+//        Rating rating = ratingRepository.findById(recipe.getRatingId())
+//                .orElse(null);
 
         Vegan vegan = veganRepository.findById(recipe.getVeganId())
                 .orElseThrow(() -> new NotFoundException("Vegan recipe Not Found"));
 
-        if (rating == null) {
-            Rating newRating = new Rating();
-            newRating.setFoodId(recipe.getId());
-            newRating.setRating(recipe.getRating().getRating());
-        }
+//        if (rating == null) {
+//            Rating newRating = new Rating();
+//            newRating.setFoodId(recipe.getId());
+//            newRating.setRating(recipe.getRating().getRating());
+//        }
 
         Recipes newRecipe = recipesRepository.save(recipe);
 
         System.out.println(newRecipe);
 
         newRecipe.setLevel(level);
-        newRecipe.setRating(rating);
+//        newRecipe.setRating(rating);
         newRecipe.setVegan(vegan);
 
         return newRecipe;
@@ -110,8 +110,8 @@ public class RecipesService {
         Level level = levelRepository.findById(newRecipe.getLevelId())
                 .orElseThrow(() -> new NotFoundException("Level of difficulty Not Found"));
 
-        Rating rating = ratingRepository.findById(newRecipe.getRatingId())
-                .orElseThrow(() -> new NotFoundException("Rating Not Found"));
+//        Rating rating = ratingRepository.findById(newRecipe.getRatingId())
+//                .orElseThrow(() -> new NotFoundException("Rating Not Found"));
 
         Vegan vegan = veganRepository.findById(newRecipe.getVeganId())
                 .orElseThrow(() -> new NotFoundException("Vegan recipe Not Found"));
@@ -120,7 +120,7 @@ public class RecipesService {
         newRecipe.setId(id);
         recipesRepository.save(newRecipe);
         newRecipe.setLevel(level);
-        newRecipe.setRating(rating);
+//        newRecipe.setRating(rating);
         newRecipe.setVegan(vegan);
 
         return newRecipe;
