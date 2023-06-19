@@ -46,6 +46,15 @@
   }
 }
 
+.link-back {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.link-back:hover {
+  cursor: pointer;
+}
+
 @media screen and (min-width: $tablet-breakpoint) {
   .food-recipe {
     display: flex;
