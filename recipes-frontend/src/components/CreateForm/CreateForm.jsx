@@ -110,11 +110,23 @@ const CreateForm = ({
         <input
           className="create-form-container__form--input"
           placeholder="Please give the rating for this recipe"
-          id="ratingId"
+          // id="ratingId"
           type="number"
           value={recipe.rating}
           onInput={(event) =>
-            setRecipe({ ...recipe, ratingId: event.target.value })
+            setRecipe({ ...recipe, rating: event.target.value })
+          }
+        />
+
+        <label className="create-form-container__form--label">Price</label>
+        <input
+          className="create-form-container__form--input"
+          placeholder="Price in £"
+          // id="ratingId"
+          type="number"
+          value={recipe.price}
+          onInput={(event) =>
+            setRecipe({ ...recipe, price: event.target.value })
           }
         />
 
