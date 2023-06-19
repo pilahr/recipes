@@ -1,7 +1,28 @@
 @use "../../styles/main" as *;
+@use "../../styles/variables" as *;
 
 .food-page {
   &__searchbox {
     margin-top: 120px;
+  }
+
+  &__vegan-checkbox {
+    padding-left: 80px;
+    display: flex;
+    align-items: center;
+
+    &--label {
+      color: $color-dark-green;
+      padding: 15px;
+    }
+
+    &--box {
+      width: 30px;
+      height: 30px;
+    }
+
+    &--box:hover {
+      cursor: pointer;
+    }
   }
 }

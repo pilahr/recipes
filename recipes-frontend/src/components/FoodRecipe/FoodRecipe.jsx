@@ -12,7 +12,6 @@ const FoodRecipe = ({ recipe }) => {
     level: { name },
     vegan,
   } = recipe;
-  // console.log(recipe);
 
   return (
     <>
