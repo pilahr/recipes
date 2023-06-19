@@ -46,6 +46,15 @@ const Foods = ({ vegans }) => {
   //   return <Spinner />;
   // }
 
+  let searchedOutput = <h5 className="food-page__notFound">No Recipes Found</h5>;
+  if (searchRecipe.length > 0) {
+    searchedOutput = (
+      <>
+        <FoodCardList recipes={searchRecipe} veganRecipes={selectedVegans} />
+      </>
+    );
+  }
+
   return (
     <div className="food-page">
       <div>
@@ -70,7 +79,8 @@ const Foods = ({ vegans }) => {
         </label>
       </div>
       <div>
-        <FoodCardList recipes={searchRecipe} veganRecipes={selectedVegans} />
+        {searchedOutput}
+        {/* <FoodCardList recipes={searchRecipe} veganRecipes={selectedVegans} /> */}
       </div>
       <div>
         <Footer />
