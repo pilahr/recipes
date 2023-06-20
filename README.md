@@ -1,5 +1,6 @@
 # recipes
-![D160A7CC-FBA9-4532-9F88-396D0ABC9DEE](https://github.com/pilahr/recipes/assets/125895065/bbf2cb58-bdf7-43e9-84be-82a6336625e2)
+![4C4CE980-1503-42A1-9AA3-BD2C42A341EB](https://github.com/pilahr/recipes/assets/125895065/842d41a3-431d-4df6-98ac-20bb69a91b02)
+
 
 Overview
 The project aims to be a full stack project. To consolidate the topics that have been covered in the course.
