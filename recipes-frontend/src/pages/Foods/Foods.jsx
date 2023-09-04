@@ -4,8 +4,7 @@ import Heading from "../../components/Heading/Heading";
 import Searchbox from "../../components/Searchbox/Searchbox";
 import FoodCardList from "../../components/FoodCardList/FoodCardList";
 import Footer from "../../components/Footer/Footer";
-import Select from "../../components/Select/Select";
-import Spinner from "../../components/Spinner/Spinner";
+
 
 const Foods = ({ vegans }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -41,12 +40,9 @@ const Foods = ({ vegans }) => {
     return recipe.foodName.toLowerCase().includes(searchTerm);
   });
 
-  // const isLoading = !(recipes.length > 0) && !(vegans.length > 0);
-  // if (isLoading) {
-  //   return <Spinner />;
-  // }
-
-  let searchedOutput = <h5 className="food-page__notFound">No Recipes Found</h5>;
+  let searchedOutput = (
+    <h5 className="food-page__notFound">No Recipes Found</h5>
+  );
   if (searchRecipe.length > 0) {
     searchedOutput = (
       <>
@@ -80,7 +76,6 @@ const Foods = ({ vegans }) => {
       </div>
       <div>
         {searchedOutput}
-        {/* <FoodCardList recipes={searchRecipe} veganRecipes={selectedVegans} /> */}
       </div>
       <div>
         <Footer />
