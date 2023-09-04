@@ -20,13 +20,6 @@ public class Recipes {
 
     private double rating;
 
-//    @Column(name = "rating_id")
-//    private long ratingId;
-//
-//    @OneToOne
-//    @JoinColumn(name = "rating_id", insertable = false, updatable = false)
-//    private Rating rating;
-
     @Column(name = "vegan_id")
     private long veganId;
 

@@ -29,6 +29,5 @@ public interface RecipesRepository extends JpaRepository<Recipes, Long> {
     @Query(value = "SELECT * FROM recipes INNER JOIN vegans ON recipes.vegan_id = vegans.id WHERE is_vegan = true", nativeQuery = true)
     List<Recipes> getVeganRecipes();
 
-//    List<Recipes> getAllVegansNames();
 
 }
