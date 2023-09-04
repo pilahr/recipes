@@ -1,7 +1,6 @@
 package nology.project.repositories;
 
 import nology.project.models.Recipes;
-import nology.project.models.Vegan;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

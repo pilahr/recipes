@@ -3,7 +3,7 @@ package nology.project.responses;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Option implements OptionContract{
+public class Option implements OptionContract {
     private long id;
     private String name;
 

@@ -114,22 +114,6 @@ public class Recipes {
         this.rating = rating;
     }
 
-    //    public long getRatingId() {
-//        return ratingId;
-//    }
-//
-//    public void setRatingId(long ratingId) {
-//        this.ratingId = ratingId;
-//    }
-//
-//    public Rating getRating() {
-//        return rating;
-//    }
-//
-//    public void setRating(Rating rating) {
-//        this.rating = rating;
-//    }
-
     public long getVeganId() {
         return veganId;
     }

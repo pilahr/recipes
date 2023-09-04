@@ -1,11 +1,9 @@
 package nology.project;
 
 import nology.project.models.Level;
-import nology.project.models.Rating;
 import nology.project.models.Recipes;
 import nology.project.models.Vegan;
 import nology.project.repositories.LevelRepository;
-import nology.project.repositories.RatingRepository;
 import nology.project.repositories.RecipesRepository;
 import nology.project.repositories.VeganRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +21,6 @@ public class RecipesService {
     RecipesRepository recipesRepository;
     @Autowired
     LevelRepository levelRepository;
-    @Autowired
-    RatingRepository ratingRepository;
     @Autowired
     VeganRepository veganRepository;
 
@@ -86,6 +82,7 @@ public class RecipesService {
     public List<Vegan> getVeganOptions() {
         return veganRepository.getVeganOptions();
     }
+
     public List<Level> getLevelOptions() {
         return levelRepository.getLevelOptions();
     }
@@ -107,7 +104,6 @@ public class RecipesService {
         newRecipe.setId(id);
         recipesRepository.save(newRecipe);
         newRecipe.setLevel(level);
-//        newRecipe.setRating(rating);
         newRecipe.setVegan(vegan);
 
         return newRecipe;
