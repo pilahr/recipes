@@ -1,7 +1,5 @@
 package nology.project.models;
 
-import org.springframework.context.annotation.EnableMBeanExport;
-
 import javax.persistence.*;
 
 @Entity
@@ -145,25 +143,6 @@ public class Recipes {
     public void setLevel(Level level) {
         this.level = level;
     }
-
-//    @Override
-//    public String toString() {
-//        return "Recipes{" +
-//                "id=" + id +
-//                ", foodName='" + foodName + '\'' +
-//                ", nationality='" + nationality + '\'' +
-//                ", price=" + price +
-//                ", ingredients='" + ingredients + '\'' +
-//                ", method='" + method + '\'' +
-//                ", imageUrl='" + imageUrl + '\'' +
-//                ", ratingId=" + ratingId +
-//                ", rating=" + rating +
-//                ", veganId=" + veganId +
-//                ", vegan=" + vegan +
-//                ", levelId=" + levelId +
-//                ", level=" + level +
-//                '}';
-//    }
 
 
     @Override
